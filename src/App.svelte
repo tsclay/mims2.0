@@ -1,5 +1,6 @@
 <script>
   import Header from "./components/Header.svelte";
+  import ContactForm from "./components/ContactForm.svelte";
   import { windowWidth, needModal } from "./stores.js";
 
   export let toggleModal;
@@ -23,7 +24,6 @@
     console.log(e.target);
     if (e.target.id !== 'modal-toggler') {
       needModal.set(false);
-      console.log(needModal);
     }
   }} />
 
@@ -34,4 +34,5 @@
 
 <div>
   <Header {width} {toggleModal} {toggleNavButtons} />
+  <ContactForm {width} />
 </div>
