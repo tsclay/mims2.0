@@ -10,12 +10,14 @@
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
-    position: absolute;
+    // position: absolute;
     width: 100%;
-    top: 0;
-    left: 0;
+    // top: 0;
+    // left: 0;
     background: rgb(255, 246, 126);
     padding: 0 0.25rem 0 0.25rem;
+    // z-index: 2;
+    // margin-bottom: 5rem;
   }
 
   .button-group {
