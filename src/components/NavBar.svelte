@@ -1,23 +1,27 @@
 <script>
-  export let toggleModal;
-  export let width;
-  export let toggleNavButtons;
+  export let toggleModal
+  export let width
+  export let toggleNavButtons
 </script>
 
 <style type="text/scss">
-  #header {
+  #nav-bar {
+    height: 5rem;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     // position: absolute;
-    width: 100%;
     // top: 0;
     // left: 0;
+    width: 100%;
     background: rgb(255, 246, 126);
-    padding: 0 0.25rem 0 0.25rem;
-    // z-index: 2;
-    // margin-bottom: 5rem;
+    h1 {
+      margin-left: 0.25rem;
+    }
+    :last-child {
+      margin-right: 0.25rem;
+    }
   }
 
   .button-group {
@@ -47,8 +51,7 @@
   }
 </style>
 
-<div id="header">
-  <h1>Mims Family Painting</h1>
+<div id="nav-bar">
   {#if width > 600}
     <div class="button-group">
       <button type="button">About</button>
