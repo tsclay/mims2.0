@@ -1,4 +1,5 @@
 <script>
+  const currentYear = new Date().getUTCFullYear();
 </script>
 
 <style>
@@ -9,6 +10,8 @@
 </style>
 
 <div id="footer">
-  <p>Copyright © 1868-2020 Mims Family Painting All Rights Reserved.</p>
+  <p>
+    Copyright © 1868-{currentYear} Mims Family Painting All Rights Reserved.
+  </p>
   <p>Website designed by Tim Clay.</p>
 </div>
