@@ -2,6 +2,8 @@
   export let toggleModal
   export let width
   export let toggleNavButtons
+  export let navIsSticky
+  export let stickyNav
 </script>
 
 <style type="text/scss">
@@ -11,9 +13,6 @@
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
     width: 100%;
     background: rgb(255, 246, 126);
     h1 {
@@ -38,7 +37,7 @@
 
   .sm-modal {
     position: absolute;
-    top: 2rem;
+    z-index: 2;
     right: 0.5rem;
     background: gray;
     border-radius: 4px;
@@ -51,7 +50,7 @@
   }
 </style>
 
-<div id="nav-bar">
+<div id="nav-bar" style={navIsSticky ? stickyNav : null}>
   {#if width > 600}
     <div class="button-group">
       <button type="button">About</button>
