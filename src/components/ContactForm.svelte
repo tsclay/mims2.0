@@ -1,51 +1,51 @@
 <script>
-  export let width;
+  export let width
   let messageData = {
     name: null,
     email: null,
     message: null,
     phone: null,
-    preferredContact: either,
-  };
-  let example;
-  let error;
+    preferredContact: 'either'
+  }
+  let example
+  let error
 
   const validateEmail = (e) => {
-    console.log(e.target.value);
-    const emailRegEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    console.log(e.target.value)
+    const emailRegEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegEx.test(e.target.value)) {
-      error = "Please enter a valid email address.";
-      example = error;
+      error = 'Please enter a valid email address.'
+      example = error
     } else {
-      example = null;
+      example = null
     }
-  };
+  }
 
   const validatePhone = (e) => {
-    const digitsWithDashes = /[0-9]{3}-[0-9]{3}-[0-9]{4}/;
-    const digitsOnly = /[0-9]{10}/;
+    const digitsWithDashes = /[0-9]{3}-[0-9]{3}-[0-9]{4}/
+    const digitsOnly = /[0-9]{10}/
     if (
       !digitsWithDashes.test(e.target.value) &&
       !digitsOnly.test(e.target.value)
     ) {
-      error = "PLease enter a valid phone number.";
-      example = error;
+      error = 'PLease enter a valid phone number.'
+      example = error
     } else {
-      example = null;
+      example = null
     }
-  };
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const { name, email, message } = messageData;
+    e.preventDefault()
+    const { name, email, message } = messageData
     if (!(name && email && message)) {
-      error = "Please fill all fields.";
-      example = error;
-      return;
+      error = 'Please fill all fields.'
+      example = error
+      return
     }
-    const response = await JSON.stringify(messageData);
-    example = response;
-  };
+    const response = await JSON.stringify(messageData)
+    example = response
+  }
 </script>
 
 <style type="text/scss">
@@ -87,7 +87,7 @@
       id="pref-email"
       value="email"
       on:click={(e) => {
-        messageData.preferredContact = e.target.value;
+        messageData.preferredContact = e.target.value
       }} />
     <label for="pref-phone">Phone</label>
     <input
@@ -96,7 +96,7 @@
       id="pref-phone"
       value="phone"
       on:click={(e) => {
-        messageData.preferredContact = e.target.value;
+        messageData.preferredContact = e.target.value
       }} />
     <label for="pref-either">Either</label>
     <input
@@ -105,7 +105,7 @@
       id="pref-either"
       value="either"
       on:click={(e) => {
-        messageData.preferredContact = e.target.value;
+        messageData.preferredContact = e.target.value
       }} />
     <button type="submit">Send</button>
   </form>
