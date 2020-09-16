@@ -4,7 +4,6 @@
 <style>
   img {
     width: 100%;
-    height: 700px;
     position: relative;
   }
 
@@ -19,11 +18,15 @@
   .flex-text {
     position: absolute;
     display: flex;
-    height: 100%;
     width: 100%;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+  }
+
+  img,
+  .flex-text {
+    height: 700px;
   }
 </style>
 
