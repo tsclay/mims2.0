@@ -1,9 +1,9 @@
 <script>
-  export let toggleModal
-  export let width
-  export let toggleNavButtons
-  export let navIsSticky
-  export let stickyNav
+  export let toggleModal;
+  export let width;
+  export let toggleNavButtons;
+  export let navIsSticky;
+  export let stickyNav;
 </script>
 
 <style type="text/scss">
@@ -55,6 +55,7 @@
     <div class="button-group">
       <button type="button">About</button>
       <button type="button">Gallery</button>
+      <button type="button">Testimonials</button>
       <button type="button">Contact</button>
     </div>
   {:else}
@@ -63,6 +64,7 @@
       <div class="sm-modal">
         <button type="button">About</button>
         <button type="button">Gallery</button>
+        <button type="button">Testimonials</button>
         <button type="button">Contact</button>
       </div>
     {/if}
