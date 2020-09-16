@@ -1,19 +1,20 @@
 <script>
-  import Header from "./components/Header.svelte";
-  import ContactForm from "./components/ContactForm.svelte";
-  import { windowWidth, needModal } from "./stores.js";
+  import NavBar from './components/NavBar.svelte'
+  import ContactForm from './components/ContactForm.svelte'
+  import Banner from './components/Banner.svelte'
+  import { windowWidth, needModal } from './stores.js'
 
-  export let toggleModal;
-  export let width;
+  export let toggleModal
+  export let width
 
-  const unsubscribeWidth = windowWidth.subscribe((value) => (width = value));
+  const unsubscribeWidth = windowWidth.subscribe((value) => (width = value))
   const unsubscribeModal = needModal.subscribe((value) => {
-    toggleModal = value;
-  });
+    toggleModal = value
+  })
 
   const toggleNavButtons = () => {
-    needModal.set(!toggleModal);
-  };
+    needModal.set(!toggleModal)
+  }
 </script>
 
 <style>
@@ -21,18 +22,19 @@
 
 <svelte:body
   on:click={(e) => {
-    console.log(e.target);
+    console.log(e.target)
     if (e.target.id !== 'modal-toggler') {
-      needModal.set(false);
+      needModal.set(false)
     }
   }} />
 
 <svelte:window
   on:resize={() => {
-    windowWidth.set(window.innerWidth);
+    windowWidth.set(window.innerWidth)
   }} />
 
 <div>
-  <Header {width} {toggleModal} {toggleNavButtons} />
+  <Banner />
+  <NavBar {width} {toggleModal} {toggleNavButtons} />
   <ContactForm {width} />
 </div>
