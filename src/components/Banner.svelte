@@ -7,6 +7,13 @@
     position: relative;
   }
 
+  h1 {
+    font-size: 5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+
   .banner-text-wrapper {
     position: absolute;
     top: 0;
