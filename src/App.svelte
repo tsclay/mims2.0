@@ -45,7 +45,6 @@
 
 <svelte:body
   on:click={(e) => {
-    console.log(e.target);
     if (e.target.id !== 'modal-toggler') {
       needModal.set(false);
     }
