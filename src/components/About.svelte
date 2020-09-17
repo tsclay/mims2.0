@@ -2,9 +2,17 @@
 </script>
 
 <style type="text/scss">
-  #about > div {
-    margin-bottom: 4rem;
+  #about {
+    h1 {
+      text-align: center;
+    }
+    > div {
+      margin-bottom: 4rem;
+    }
   }
+  // #about > div {
+  //   margin-bottom: 4rem;
+  // }
   .about-containers {
     display: flex;
     align-items: flex-start;
@@ -35,7 +43,7 @@
 </style>
 
 <div class="component" id="about">
-  <h1>About</h1>
+  <h1>Family owned and operated for six generations</h1>
   <!-- <svg viewBox="150 90 70 20" height="20mm" width="100%">
     <g id="layer1" inkscape:groupmode="layer" inkscape:label="Layer 1">
       <g transform="matrix(0.86152107,0,0,1,26.507841,0)" id="g1248">
