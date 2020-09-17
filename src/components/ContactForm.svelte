@@ -73,7 +73,7 @@
   }
 </style>
 
-<div id="contact-component">
+<div class="component" id="contact-form">
   <h1>Contact us</h1>
   <p>
     Estimates are provided quickly and at no cost. Painting one door, painting
