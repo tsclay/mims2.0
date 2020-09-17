@@ -4,7 +4,8 @@
 <style type="text/scss">
   #about {
     h1 {
-      text-align: center;
+      // text-align: center;
+      margin: 4rem 0;
     }
     > div {
       margin-bottom: 4rem;
