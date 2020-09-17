@@ -2,10 +2,14 @@
   const currentYear = new Date().getUTCFullYear();
 </script>
 
-<style>
+<style type="text/scss">
   #footer {
-    background: rgb(255, 246, 126);
-    height: 10rem;
+    /* background: rgb(255, 246, 126); */
+    background: var(--accentOrange);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    // height: 10rem;
   }
 </style>
 
