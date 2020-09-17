@@ -3,6 +3,7 @@
   import ContactForm from "./components/ContactForm.svelte";
   import Banner from "./components/Banner.svelte";
   import About from "./components/About.svelte";
+  import Testimonials from "./components/Testimonials.svelte";
   import Footer from "./components/Footer.svelte";
   import { windowWidth, needModal } from "./stores.js";
 
@@ -33,6 +34,12 @@
     margin: 0 auto;
     width: 90%;
     max-width: 1298px;
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        margin-bottom: 2rem;
+      }
+    }
   }
 </style>
 
@@ -55,6 +62,7 @@
   <NavBar {width} {toggleModal} {toggleNavButtons} {navIsSticky} {stickyNav} />
   <main>
     <About />
+    <Testimonials />
     <ContactForm {width} />
   </main>
   <Footer />
