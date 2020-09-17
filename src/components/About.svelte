@@ -2,7 +2,7 @@
 </script>
 
 <style type="text/scss">
-  #about-section > div {
+  #about > div {
     margin-bottom: 4rem;
   }
   .about-containers {
@@ -34,12 +34,12 @@
   }
 </style>
 
-<div id="about-section">
+<div class="component" id="about">
   <h1>About</h1>
   <div class="about-containers pic-left-side">
     <img src="./assets/history.jpg" alt="Mims Painting, 1925" />
     <div class="about-text">
-      <h2>Made in New York, Made for New York</h2>
+      <h2>Tradition of excellence</h2>
       <p>
         We are built on six generations of highly-skilled workmanship,
         outstanding customer relations, and exceptional service in the painting
@@ -96,7 +96,7 @@
 
   <div class="about-containers pic-right-side">
     <div class="about-text">
-      <h2>Competitve, flexible pricing</h2>
+      <h2>Competitive, flexible pricing</h2>
       <p>
         Our pricing is competitive with other quality contractors but we will
         work with you on budget limitations as needed. We offer a variety of
