@@ -14,7 +14,8 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    background: rgb(255, 246, 126);
+    // background: rgb(255, 246, 126);
+    background: var(--accentOrange);
     h1 {
       margin-left: 0.25rem;
     }
@@ -53,19 +54,43 @@
 <div id="nav-bar" style={navIsSticky ? stickyNav : null}>
   {#if width > 600}
     <div class="button-group">
-      <button type="button">About</button>
+      <button
+        type="button"
+        on:click={() => {
+          window.scrollTo({ left: 0, top: 709, behavior: 'smooth' });
+        }}>About</button>
       <button type="button">Gallery</button>
-      <button type="button">Testimonials</button>
-      <button type="button">Contact</button>
+      <button
+        type="button"
+        on:click={() => {
+          window.scrollTo({ left: 0, top: 2223, behavior: 'smooth' });
+        }}>Testimonials</button>
+      <button
+        type="button"
+        on:click={() => {
+          window.scrollTo({ left: 0, top: 2330, behavior: 'smooth' });
+        }}>Contact</button>
     </div>
   {:else}
     <button on:click={toggleNavButtons} id="modal-toggler">Menu</button>
     {#if toggleModal}
       <div class="sm-modal">
-        <button type="button">About</button>
+        <button
+          type="button"
+          on:click={() => {
+            window.scrollTo({ left: 0, top: 709, behavior: 'smooth' });
+          }}>About</button>
         <button type="button">Gallery</button>
-        <button type="button">Testimonials</button>
-        <button type="button">Contact</button>
+        <button
+          type="button"
+          on:click={() => {
+            window.scrollTo({ left: 0, top: 2223, behavior: 'smooth' });
+          }}>Testimonials</button>
+        <button
+          type="button"
+          on:click={() => {
+            window.scrollTo({ left: 0, top: 2330, behavior: 'smooth' });
+          }}>Contact</button>
       </div>
     {/if}
   {/if}
