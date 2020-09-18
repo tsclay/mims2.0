@@ -1,47 +1,43 @@
 <script>
 </script>
 
-<style>
-  img {
+<style type="text/scss">
+  #banner > img {
     width: 100%;
     position: relative;
   }
 
-  h1 {
-    font-size: 5rem;
-  }
   h3 {
     font-size: 2rem;
   }
 
   .banner-text-wrapper {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-
-  .flex-text {
-    position: absolute;
     display: flex;
-    width: 100%;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+    top: 0;
+    width: 100%;
   }
 
-  img,
-  .flex-text {
-    height: 700px;
+  .logo-wrapper {
+    width: 70%;
+    background: rgba(141, 141, 141, 0.664);
+    border: black solid 4px;
+    max-width: 920px;
+    padding: 8px;
+    img {
+      width: 100%;
+    }
   }
 </style>
 
 <div id="banner">
-  <img src="../assets/banner-img.jpg" alt="Mims Family Painting" />
+  <img src="../assets/img/rekean2.jpg" alt="Mims Family Painting" />
   <div class="banner-text-wrapper">
-    <div class="flex-text">
-      <h1>Mims Family Painting</h1>
-      <h3>Six generations of custom painting</h3>
+    <div class="logo-wrapper">
+      <img src="../assets/img/NEWNEWLOGO.png" alt="logo" />
     </div>
   </div>
 </div>

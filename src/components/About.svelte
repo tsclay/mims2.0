@@ -67,6 +67,34 @@
       </g>
     </g>
   </svg> -->
+  <svg
+    viewBox="150 90 70 20"
+    height="20mm"
+    width="100%"
+    version="1.1"
+    id="svg8"
+    inkscape:version="1.0 (4035a4f, 2020-05-01)"
+    sodipodi:docname="top-text-accent.svg">
+    <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
+      <path
+        style="fill:none;stroke:#000000;stroke-width:0.31;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+        d="m 57.5226,92.117155 h 6.892168 v 0"
+        id="path1059" />
+      <path
+        id="path1059-5"
+        d="m 54.076515,96.321565 h 13.784337 v 0"
+        style="fill:none;stroke:#000000;stroke-width:0.41;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+      <path
+        id="path1059-4"
+        d="m 47.184347,100.72647 h 27.568674 v 0"
+        style="fill:none;stroke:#000000;stroke-width:0.51;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+      <path
+        id="path1059-9"
+        d="m 33.40001,105.13136 h 55.137348 v 0"
+        style="fill:none;stroke:#000000;stroke-width:0.61;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+    </g>
+  </svg>
+
   <div class="about-containers pic-left-side">
     <img src="./assets/history.jpg" alt="Mims Painting, 1925" />
     <div class="about-text">
@@ -84,6 +112,33 @@
     </div>
   </div>
 
+  <svg
+    viewBox="150 90 70 20"
+    height="20mm"
+    width="100%"
+    version="1.1"
+    id="svg8"
+    inkscape:version="1.0 (4035a4f, 2020-05-01)"
+    sodipodi:docname="top-text-accent.svg">
+    <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
+      <path
+        style="fill:none;stroke:#000000;stroke-width:0.31;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+        d="m 57.5226,92.117155 h 6.892168 v 0"
+        id="path1059" />
+      <path
+        id="path1059-5"
+        d="m 54.076515,96.321565 h 13.784337 v 0"
+        style="fill:none;stroke:#000000;stroke-width:0.41;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+      <path
+        id="path1059-4"
+        d="m 47.184347,100.72647 h 27.568674 v 0"
+        style="fill:none;stroke:#000000;stroke-width:0.51;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+      <path
+        id="path1059-9"
+        d="m 33.40001,105.13136 h 55.137348 v 0"
+        style="fill:none;stroke:#000000;stroke-width:0.61;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+    </g>
+  </svg>
   <div class="about-containers pic-right-side">
     <div class="about-text">
       <h2>Fully licensed, insured, bonded, and certified</h2>
@@ -102,6 +157,33 @@
       alt="Paint work on non-conventional canvases" />
   </div>
 
+  <svg
+    viewBox="150 90 70 20"
+    height="20mm"
+    width="100%"
+    version="1.1"
+    id="svg8"
+    inkscape:version="1.0 (4035a4f, 2020-05-01)"
+    sodipodi:docname="top-text-accent.svg">
+    <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
+      <path
+        style="fill:none;stroke:#000000;stroke-width:0.31;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+        d="m 57.5226,92.117155 h 6.892168 v 0"
+        id="path1059" />
+      <path
+        id="path1059-5"
+        d="m 54.076515,96.321565 h 13.784337 v 0"
+        style="fill:none;stroke:#000000;stroke-width:0.41;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+      <path
+        id="path1059-4"
+        d="m 47.184347,100.72647 h 27.568674 v 0"
+        style="fill:none;stroke:#000000;stroke-width:0.51;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+      <path
+        id="path1059-9"
+        d="m 33.40001,105.13136 h 55.137348 v 0"
+        style="fill:none;stroke:#000000;stroke-width:0.61;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+    </g>
+  </svg>
   <div class="about-containers pic-left-side">
     <img src="./assets/houseWork.jpg" alt="Painting a house in the Hamptons" />
     <div class="about-text">
@@ -125,6 +207,33 @@
   </p> -->
   <!-- This should go close to contact form -->
 
+  <svg
+    viewBox="150 90 70 20"
+    height="20mm"
+    width="100%"
+    version="1.1"
+    id="svg8"
+    inkscape:version="1.0 (4035a4f, 2020-05-01)"
+    sodipodi:docname="top-text-accent.svg">
+    <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
+      <path
+        style="fill:none;stroke:#000000;stroke-width:0.31;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+        d="m 57.5226,92.117155 h 6.892168 v 0"
+        id="path1059" />
+      <path
+        id="path1059-5"
+        d="m 54.076515,96.321565 h 13.784337 v 0"
+        style="fill:none;stroke:#000000;stroke-width:0.41;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+      <path
+        id="path1059-4"
+        d="m 47.184347,100.72647 h 27.568674 v 0"
+        style="fill:none;stroke:#000000;stroke-width:0.51;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+      <path
+        id="path1059-9"
+        d="m 33.40001,105.13136 h 55.137348 v 0"
+        style="fill:none;stroke:#000000;stroke-width:0.61;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+    </g>
+  </svg>
   <div class="about-containers pic-right-side">
     <div class="about-text">
       <h2>Competitive, flexible pricing</h2>
