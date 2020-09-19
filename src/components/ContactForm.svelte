@@ -1,62 +1,62 @@
 <script>
-  import { fly, fade } from "svelte/transition";
-  let example;
-  let errors = {};
-  let selected;
+  import { fly, fade } from 'svelte/transition'
+  let example
+  let errors = {}
+  let selected
   let messageData = {
     name: null,
     email: null,
     message: null,
     phone: null,
-    preferredContact: "both",
-  };
+    preferredContact: 'both'
+  }
 
   const validateEmail = (e) => {
-    const emailRegEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!e.target.value && errors.hasOwnProperty("InvalidEmail")) {
-      delete errors["InvalidEmail"];
-      errors = errors;
-      return;
+    const emailRegEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!e.target.value && errors.hasOwnProperty('InvalidEmail')) {
+      delete errors['InvalidEmail']
+      errors = errors
+      return
     }
-    if (!e.target.value) return;
+    if (!e.target.value) return
     if (!emailRegEx.test(e.target.value)) {
-      errors["InvalidEmail"] = "Please enter a valid email address.";
-    } else if (errors.hasOwnProperty("InvalidEmail")) {
-      delete errors["InvalidEmail"];
-      errors = errors;
+      errors['InvalidEmail'] = 'Please enter a valid email address.'
+    } else if (errors.hasOwnProperty('InvalidEmail')) {
+      delete errors['InvalidEmail']
+      errors = errors
     }
-  };
+  }
 
   const validatePhone = (e) => {
-    const digitsWithDashes = /[0-9]{3}-[0-9]{3}-[0-9]{4}/;
-    const digitsOnly = /[0-9]{10}/;
-    if (!e.target.value && errors.hasOwnProperty("InvalidPhone")) {
-      delete errors["InvalidPhone"];
-      errors = errors;
-      return;
+    const digitsWithDashes = /[0-9]{3}-[0-9]{3}-[0-9]{4}/
+    const digitsOnly = /[0-9]{10}/
+    if (!e.target.value && errors.hasOwnProperty('InvalidPhone')) {
+      delete errors['InvalidPhone']
+      errors = errors
+      return
     }
-    if (!e.target.value) return;
+    if (!e.target.value) return
     if (
       !digitsWithDashes.test(e.target.value) &&
       !digitsOnly.test(e.target.value)
     ) {
-      errors["InvalidPhone"] = "Please enter a valid phone number.";
-    } else if (errors.hasOwnProperty("InvalidPhone")) {
-      delete errors["InvalidPhone"];
-      errors = errors;
+      errors['InvalidPhone'] = 'Please enter a valid phone number.'
+    } else if (errors.hasOwnProperty('InvalidPhone')) {
+      delete errors['InvalidPhone']
+      errors = errors
     }
-  };
+  }
 
   const handleSubmit = async (e) => {
-    const { name, email, message } = messageData;
+    const { name, email, message } = messageData
     if (!name || !email || !message) {
-      errors["EmptyFields"] = "Please fill all fields.";
-      return;
+      errors['EmptyFields'] = 'Please fill all fields.'
+      return
     }
-    messageData.preferredContact = selected;
-    const response = await JSON.stringify(messageData);
-    example = response;
-  };
+    messageData.preferredContact = selected
+    const response = await JSON.stringify(messageData)
+    example = response
+  }
 </script>
 
 <style type="text/scss">
@@ -78,9 +78,9 @@
   #form-wrapper {
     width: 50%;
     padding: 1rem;
-    background: rgb(49, 49, 49);
+    background: var(--lightGray);
     border-radius: 4px;
-    box-shadow: 4px 4px 20px 10px;
+    // box-shadow: 4px 4px 20px 10px;
     margin: 0 auto;
   }
 
@@ -141,8 +141,8 @@
             <button
               type="button"
               on:click={() => {
-                delete errors['InvalidEmail'];
-                errors = errors;
+                delete errors['InvalidEmail']
+                errors = errors
               }}>X</button>
           </div>
         {/if}
@@ -163,8 +163,8 @@
             <button
               type="button"
               on:click={() => {
-                delete errors['InvalidPhone'];
-                errors = errors;
+                delete errors['InvalidPhone']
+                errors = errors
               }}>X</button>
           </div>
         {/if}
@@ -192,8 +192,8 @@
             <button
               type="button"
               on:click={() => {
-                delete errors['EmptyFields'];
-                errors = errors;
+                delete errors['EmptyFields']
+                errors = errors
               }}>X</button>
           </div>
         {/if}
