@@ -16,8 +16,8 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: center;
     top: 0;
+    transform: translateY(80%);
     width: 100%;
   }
 
