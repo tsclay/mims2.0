@@ -1,69 +1,74 @@
 <script>
-  import { fly, fade } from 'svelte/transition'
-  let example
-  let errors = {}
-  let selected
+  import { fly, fade } from "svelte/transition";
+  let example;
+  let errors = {};
+  let selected = "both";
   let messageData = {
     name: null,
     email: null,
     message: null,
     phone: null,
-    preferredContact: 'both'
-  }
+    preferredContact: "both",
+  };
 
   const validateEmail = (e) => {
-    const emailRegEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!e.target.value && errors.hasOwnProperty('InvalidEmail')) {
-      delete errors['InvalidEmail']
-      errors = errors
-      return
+    const emailRegEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!e.target.value && errors.hasOwnProperty("InvalidEmail")) {
+      delete errors["InvalidEmail"];
+      errors = errors;
+      return;
     }
-    if (!e.target.value) return
+    if (!e.target.value) return;
     if (!emailRegEx.test(e.target.value)) {
-      errors['InvalidEmail'] = 'Please enter a valid email address.'
-    } else if (errors.hasOwnProperty('InvalidEmail')) {
-      delete errors['InvalidEmail']
-      errors = errors
+      errors["InvalidEmail"] = "Please enter a valid email address.";
+    } else if (errors.hasOwnProperty("InvalidEmail")) {
+      delete errors["InvalidEmail"];
+      errors = errors;
     }
-  }
+  };
 
   const validatePhone = (e) => {
-    const digitsWithDashes = /[0-9]{3}-[0-9]{3}-[0-9]{4}/
-    const digitsOnly = /[0-9]{10}/
-    if (!e.target.value && errors.hasOwnProperty('InvalidPhone')) {
-      delete errors['InvalidPhone']
-      errors = errors
-      return
+    const digitsWithDashes = /[0-9]{3}-[0-9]{3}-[0-9]{4}/;
+    const digitsOnly = /[0-9]{10}/;
+    if (!e.target.value && errors.hasOwnProperty("InvalidPhone")) {
+      delete errors["InvalidPhone"];
+      errors = errors;
+      return;
     }
-    if (!e.target.value) return
+    if (!e.target.value) return;
     if (
       !digitsWithDashes.test(e.target.value) &&
       !digitsOnly.test(e.target.value)
     ) {
-      errors['InvalidPhone'] = 'Please enter a valid phone number.'
-    } else if (errors.hasOwnProperty('InvalidPhone')) {
-      delete errors['InvalidPhone']
-      errors = errors
+      errors["InvalidPhone"] = "Please enter a valid phone number.";
+    } else if (errors.hasOwnProperty("InvalidPhone")) {
+      delete errors["InvalidPhone"];
+      errors = errors;
     }
-  }
+  };
+
+  const handleContactPref = (e) => {
+    selected = e.target.value;
+    messageData.preferredContact = selected;
+  };
 
   const handleSubmit = async (e) => {
-    const { name, email, message } = messageData
+    const { name, email, message } = messageData;
     if (!name || !email || !message) {
-      errors['EmptyFields'] = 'Please fill all fields.'
-      return
+      errors["EmptyFields"] = "Please fill all fields.";
+      return;
     }
-    messageData.preferredContact = selected
-    const response = await JSON.stringify(messageData)
-    example = response
-  }
+    messageData.preferredContact = selected;
+    const response = await JSON.stringify(messageData);
+    example = response;
+  };
 </script>
 
 <style type="text/scss">
   form {
     width: 70%;
     margin: 0 auto;
-    color: white;
+    color: var(--darkAmber);
 
     input,
     textarea,
@@ -73,6 +78,23 @@
     }
     textarea {
       resize: none;
+    }
+    div[name="pref-contact"] {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      :nth-child(1),
+      :nth-child(2) {
+        margin-right: 0.5rem;
+      }
+      button:disabled {
+        background-color: var(--white);
+        color: var(--lightGray);
+      }
+    }
+    button:not(:disabled) {
+      background-color: var(--darkGray);
+      color: var(--white);
     }
   }
   #form-wrapper {
@@ -141,8 +163,8 @@
             <button
               type="button"
               on:click={() => {
-                delete errors['InvalidEmail']
-                errors = errors
+                delete errors['InvalidEmail'];
+                errors = errors;
               }}>X</button>
           </div>
         {/if}
@@ -163,8 +185,8 @@
             <button
               type="button"
               on:click={() => {
-                delete errors['InvalidPhone']
-                errors = errors
+                delete errors['InvalidPhone'];
+                errors = errors;
               }}>X</button>
           </div>
         {/if}
@@ -177,11 +199,28 @@
         cols="30"
         rows="10" />
       <label for="pref-contact">Preferred Contact Method</label>
-      <select bind:value={selected} name="pref-contact" id="pref-contact">
+      <!-- <select bind:value={selected} name="pref-contact" id="pref-contact">
         <option value="email">Email</option>
         <option value="phone">Phone</option>
         <option selected value="both">Both</option>
-      </select>
+      </select> -->
+      <div name="pref-contact">
+        <button
+          disabled={selected === 'email'}
+          value="email"
+          type="button"
+          on:click={handleContactPref}>Email</button>
+        <button
+          disabled={selected === 'phone'}
+          value="phone"
+          type="button"
+          on:click={handleContactPref}>Phone</button>
+        <button
+          disabled={selected === 'both'}
+          value="both"
+          type="button"
+          on:click={handleContactPref}>Both</button>
+      </div>
       <div class="error-wrapper">
         {#if errors.hasOwnProperty('EmptyFields')}
           <div
@@ -192,8 +231,8 @@
             <button
               type="button"
               on:click={() => {
-                delete errors['EmptyFields']
-                errors = errors
+                delete errors['EmptyFields'];
+                errors = errors;
               }}>X</button>
           </div>
         {/if}
