@@ -1,8 +1,9 @@
 :root {
   --accentOrange: #da9f49;
   --darkAmber: rgb(49, 49, 49);
-  --darkGray: #3a3a3b;
-  --lightGray: #a5a5a5;
+  --darkGray: rgb(102, 102, 102);
+  --lightGray: rgb(182, 182, 182);
+  --bannerGray: rgb(141, 141, 141);
   --white: #faf8f4;
 }
 
@@ -59,19 +60,46 @@ input:disabled {
 }
 
 button {
-  color: #333;
-  background-color: var(--lightGray);
+  color: var(--white);
+  background-color: var(--darkAmber);
   outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+button:after {
+  content: "";
+  background-color: var(--lightGray);
+  display: flex;
+  top: 0;
+  /* align-items: center;
+  justify-content: center; */
+  position: absolute;
+  height: 0;
+  width: 0;
+  /* padding-top: 300%;
+  padding-left: 350%; */
+  /* margin-left: -20px !important;
+  margin-top: -120%; */
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+button:not(:disabled):active:after {
+  /* padding: 0;
+  margin: 0; */
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  transition: 0s;
 }
 
 button:disabled {
-  color: #999;
-}
-
-button:not(:disabled):active {
-  background-color: #ddd;
+  color: var(--darkGray);
+  background-color: var(--lightGray);
 }
 
 button:focus {
-  border-color: #666;
+  border-color: var(--accentOrange);
 }
