@@ -1,9 +1,9 @@
 <script>
-  export let toggleModal
-  export let width
-  export let toggleNavButtons
-  export let navIsSticky
-  export let stickyNav
+  export let toggleModal;
+  export let width;
+  export let toggleNavButtons;
+  export let navIsSticky;
+  export let stickyNav;
 </script>
 
 <style type="text/scss">
@@ -15,10 +15,8 @@
     justify-content: space-between;
     width: 100%;
     // background: rgb(255, 246, 126);
-    background: var(--accentOrange);
-    h2 {
-      margin-left: 0.25rem;
-    }
+    background: var(--bannerGray);
+
     > :last-child {
       margin-right: 0.25rem;
     }
@@ -29,6 +27,7 @@
     align-items: center;
     button {
       margin: 0;
+      text-transform: uppercase;
     }
     @for $i from 1 through 3 {
       :nth-child(#{$i}) {
@@ -57,24 +56,24 @@
 </style>
 
 <div id="nav-bar" style={navIsSticky ? stickyNav : null}>
-  <h2>Mims Family Painting</h2>
+  <h2>The Mims Way</h2>
   {#if width > 600}
     <div class="button-group">
       <button
         type="button"
         on:click={() => {
-          window.scrollTo({ left: 0, top: 709, behavior: 'smooth' })
+          window.scrollTo({ left: 0, top: 709, behavior: 'smooth' });
         }}>About</button>
       <button type="button">Gallery</button>
       <button
         type="button"
         on:click={() => {
-          window.scrollTo({ left: 0, top: 2223, behavior: 'smooth' })
+          window.scrollTo({ left: 0, top: 2223, behavior: 'smooth' });
         }}>Testimonials</button>
       <button
         type="button"
         on:click={() => {
-          window.scrollTo({ left: 0, top: 2330, behavior: 'smooth' })
+          window.scrollTo({ left: 0, top: 2330, behavior: 'smooth' });
         }}>Contact</button>
     </div>
   {:else}
@@ -84,18 +83,18 @@
         <button
           type="button"
           on:click={() => {
-            window.scrollTo({ left: 0, top: 709, behavior: 'smooth' })
+            window.scrollTo({ left: 0, top: 709, behavior: 'smooth' });
           }}>About</button>
         <button type="button">Gallery</button>
         <button
           type="button"
           on:click={() => {
-            window.scrollTo({ left: 0, top: 2223, behavior: 'smooth' })
+            window.scrollTo({ left: 0, top: 2223, behavior: 'smooth' });
           }}>Testimonials</button>
         <button
           type="button"
           on:click={() => {
-            window.scrollTo({ left: 0, top: 2330, behavior: 'smooth' })
+            window.scrollTo({ left: 0, top: 2330, behavior: 'smooth' });
           }}>Contact</button>
       </div>
     {/if}
