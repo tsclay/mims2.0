@@ -5,7 +5,7 @@
 <style type="text/scss">
   #footer {
     /* background: rgb(255, 246, 126); */
-    background: var(--accentOrange);
+    background: var(--bannerGray);
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
