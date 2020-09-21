@@ -65,6 +65,7 @@ button {
   outline: none;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 button:after {
