@@ -1,67 +1,69 @@
 <script>
-  import { fly, fade } from "svelte/transition";
-  let example;
-  let errors = {};
-  let selected = "both";
+  import { fly, fade } from 'svelte/transition'
+  let example
+  let errors = {}
+  let selected = 'Both'
+  let showOptions = false
   let messageData = {
     name: null,
     email: null,
     message: null,
     phone: null,
-    preferredContact: "both",
-  };
+    preferredContact: 'both'
+  }
 
   const validateEmail = (e) => {
-    const emailRegEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!e.target.value && errors.hasOwnProperty("InvalidEmail")) {
-      delete errors["InvalidEmail"];
-      errors = errors;
-      return;
+    const emailRegEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!e.target.value && errors.hasOwnProperty('InvalidEmail')) {
+      delete errors['InvalidEmail']
+      errors = errors
+      return
     }
-    if (!e.target.value) return;
+    if (!e.target.value) return
     if (!emailRegEx.test(e.target.value)) {
-      errors["InvalidEmail"] = "Please enter a valid email address.";
-    } else if (errors.hasOwnProperty("InvalidEmail")) {
-      delete errors["InvalidEmail"];
-      errors = errors;
+      errors['InvalidEmail'] = 'Please enter a valid email address.'
+    } else if (errors.hasOwnProperty('InvalidEmail')) {
+      delete errors['InvalidEmail']
+      errors = errors
     }
-  };
+  }
 
   const validatePhone = (e) => {
-    const digitsWithDashes = /[0-9]{3}-[0-9]{3}-[0-9]{4}/;
-    const digitsOnly = /[0-9]{10}/;
-    if (!e.target.value && errors.hasOwnProperty("InvalidPhone")) {
-      delete errors["InvalidPhone"];
-      errors = errors;
-      return;
+    const digitsWithDashes = /[0-9]{3}-[0-9]{3}-[0-9]{4}/
+    const digitsOnly = /[0-9]{10}/
+    if (!e.target.value && errors.hasOwnProperty('InvalidPhone')) {
+      delete errors['InvalidPhone']
+      errors = errors
+      return
     }
-    if (!e.target.value) return;
+    if (!e.target.value) return
     if (
       !digitsWithDashes.test(e.target.value) &&
       !digitsOnly.test(e.target.value)
     ) {
-      errors["InvalidPhone"] = "Please enter a valid phone number.";
-    } else if (errors.hasOwnProperty("InvalidPhone")) {
-      delete errors["InvalidPhone"];
-      errors = errors;
+      errors['InvalidPhone'] = 'Please enter a valid phone number.'
+    } else if (errors.hasOwnProperty('InvalidPhone')) {
+      delete errors['InvalidPhone']
+      errors = errors
     }
-  };
+  }
 
   const handleContactPref = (e) => {
-    selected = e.target.value;
-    messageData.preferredContact = selected;
-  };
+    selected = e.target.innerText
+    messageData.preferredContact = selected.toLowerCase()
+    showOptions = false
+  }
 
   const handleSubmit = async (e) => {
-    const { name, email, message } = messageData;
+    const { name, email, message } = messageData
     if (!name || !email || !message) {
-      errors["EmptyFields"] = "Please fill all fields.";
-      return;
+      errors['EmptyFields'] = 'Please fill all fields.'
+      return
     }
-    messageData.preferredContact = selected;
-    const response = await JSON.stringify(messageData);
-    example = response;
-  };
+    messageData.preferredContact = selected
+    const response = await JSON.stringify(messageData)
+    example = response
+  }
 </script>
 
 <style type="text/scss">
@@ -79,22 +81,52 @@
     textarea {
       resize: none;
     }
-    div[name="pref-contact"] {
+    // div[name="pref-contact"] {
+    //   display: flex;
+    //   flex-flow: row nowrap;
+    //   justify-content: space-between;
+    //   :nth-child(1),
+    //   :nth-child(2) {
+    //     margin-right: 0.5rem;
+    //   }
+    //   button:disabled {
+    //     background-color: var(--white);
+    //     color: var(--lightGray);
+    //   }
+    // }
+    // button:not(:disabled) {
+    //   background-color: var(--darkGray);
+    //   color: var(--white);
+    // }
+    div[name='pref-contact'] {
       display: flex;
-      flex-flow: row nowrap;
       justify-content: space-between;
-      :nth-child(1),
-      :nth-child(2) {
-        margin-right: 0.5rem;
+      align-items: center;
+      .sel-options {
+        position: relative;
+        z-index: 4;
+        width: 87px;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
       }
-      button:disabled {
-        background-color: var(--white);
-        color: var(--lightGray);
+      .sel-text {
+        width: 100%;
+        height: 100%;
       }
-    }
-    button:not(:disabled) {
-      background-color: var(--darkGray);
-      color: var(--white);
+      .dropdown-menu {
+        position: absolute;
+        background: var(--white);
+        color: var(--darkAmber);
+        box-sizing: border-box;
+        top: 0;
+        left: -100%;
+        border-radius: 4px;
+        div {
+          padding: 4px;
+          cursor: pointer;
+        }
+      }
     }
   }
   #form-wrapper {
@@ -132,6 +164,13 @@
   }
 </style>
 
+<svelte:body
+  on:click={(e) => {
+    if (e.target.classList[0] !== 'sel-text') {
+      showOptions = false
+    }
+  }} />
+
 <div class="component" id="contact-form">
   <h1>Contact us</h1>
   <p>
@@ -163,8 +202,8 @@
             <button
               type="button"
               on:click={() => {
-                delete errors['InvalidEmail'];
-                errors = errors;
+                delete errors['InvalidEmail']
+                errors = errors
               }}>X</button>
           </div>
         {/if}
@@ -185,8 +224,8 @@
             <button
               type="button"
               on:click={() => {
-                delete errors['InvalidPhone'];
-                errors = errors;
+                delete errors['InvalidPhone']
+                errors = errors
               }}>X</button>
           </div>
         {/if}
@@ -198,14 +237,26 @@
         id="message-field"
         cols="30"
         rows="10" />
-      <label for="pref-contact">Preferred Contact Method</label>
-      <!-- <select bind:value={selected} name="pref-contact" id="pref-contact">
-        <option value="email">Email</option>
-        <option value="phone">Phone</option>
-        <option selected value="both">Both</option>
-      </select> -->
       <div name="pref-contact">
-        <button
+        <span>Preferred Contact Method</span>
+        <div class="sel-options">
+          <div
+            class="sel-text"
+            on:click={(e) => {
+              console.log(e.target.classList)
+              e.target.classList[0] !== 'dropdown-menu' ? (showOptions = !showOptions) : null
+            }}>
+            {selected}
+          </div>
+          {#if showOptions}
+            <div class="dropdown-menu">
+              <div value="email" on:click={handleContactPref}>Email</div>
+              <div value="phone" on:click={handleContactPref}>Phone</div>
+              <div value="both" on:click={handleContactPref}>Both</div>
+            </div>
+          {/if}
+        </div>
+        <!-- <button
           disabled={selected === 'email'}
           value="email"
           type="button"
@@ -219,7 +270,7 @@
           disabled={selected === 'both'}
           value="both"
           type="button"
-          on:click={handleContactPref}>Both</button>
+          on:click={handleContactPref}>Both</button> -->
       </div>
       <div class="error-wrapper">
         {#if errors.hasOwnProperty('EmptyFields')}
@@ -231,8 +282,8 @@
             <button
               type="button"
               on:click={() => {
-                delete errors['EmptyFields'];
-                errors = errors;
+                delete errors['EmptyFields']
+                errors = errors
               }}>X</button>
           </div>
         {/if}
