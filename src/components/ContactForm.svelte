@@ -98,12 +98,21 @@
       .sel-text {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         width: 100%;
         height: 100%;
         padding: 4px;
         border-radius: 4px;
         background: var(--darkAmber);
         color: var(--white);
+        button {
+          margin: 0;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
       }
       .dropdown-menu {
         position: absolute;
@@ -249,7 +258,6 @@
               type="button"
               on:click={() => {
                 showOptions = !showOptions
-                console.log(showOptions)
               }}
               class="svg-wrapper">
               <svg
