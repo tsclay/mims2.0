@@ -162,17 +162,20 @@
   {#if width > 600}
     <div class="button-group">
       <button
+        class="active-flash"
         type="button"
         on:click={() => {
           window.scrollTo({ left: 0, top: 709, behavior: 'smooth' })
         }}>About</button>
       <button type="button">Gallery</button>
       <button
+        class="active-flash"
         type="button"
         on:click={() => {
           window.scrollTo({ left: 0, top: 1750, behavior: 'smooth' })
         }}>Testimonials</button>
       <button
+        class="active-flash"
         type="button"
         on:click={() => {
           window.scrollTo({ left: 0, top: 2330, behavior: 'smooth' })
@@ -183,17 +186,20 @@
     {#if toggleModal}
       <div class="sm-modal">
         <button
+          class="active-flash"
           type="button"
           on:click={() => {
             window.scrollTo({ left: 0, top: 709, behavior: 'smooth' })
           }}>About</button>
-        <button type="button">Gallery</button>
+        <button class="active-flash" type="button">Gallery</button>
         <button
+          class="active-flash"
           type="button"
           on:click={() => {
             window.scrollTo({ left: 0, top: 1750, behavior: 'smooth' })
           }}>Testimonials</button>
         <button
+          class="active-flash"
           type="button"
           on:click={() => {
             window.scrollTo({ left: 0, top: 2330, behavior: 'smooth' })
