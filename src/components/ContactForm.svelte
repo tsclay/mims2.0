@@ -90,7 +90,7 @@
       .sel-options {
         position: relative;
         z-index: 4;
-        width: 80px;
+        width: 40%;
         display: flex;
         justify-content: space-between;
         cursor: pointer;
@@ -106,9 +106,10 @@
         background: var(--darkAmber);
         color: var(--white);
         button {
+          border: none;
           margin: 0;
-          width: 20px;
-          height: 20px;
+          width: 40px;
+          // height: 20px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -178,8 +179,10 @@
 
 <svelte:body
   on:click={(e) => {
-    if (e.target.classList[0] !== 'svg-wrapper') {
+    if (e.target.classList[0] === 'sel-text') {
       console.log(e.target.classList)
+      return
+    } else {
       showOptions = false
     }
   }} />
@@ -253,10 +256,14 @@
       <div name="pref-contact">
         <span>Preferred Contact Method</span>
         <div class="sel-options">
-          <div class="sel-text">
+          <div
+            class="sel-text"
+            on:click={(e) => {
+              showOptions = !showOptions
+            }}>
             <button
               type="button"
-              on:click={() => {
+              on:click|stopPropagation={(e) => {
                 showOptions = !showOptions
               }}
               class="svg-wrapper">
@@ -266,8 +273,8 @@
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.w3.org/2000/svg"
-                width="100%"
-                height="100%"
+                width="20"
+                height="15"
                 viewBox="0 0 158.75 158.75"
                 version="1.1"
                 class="dropArrow">
