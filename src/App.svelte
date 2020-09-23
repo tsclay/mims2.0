@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from 'svelte'
   import NavBar from './components/NavBar.svelte'
   import ContactForm from './components/ContactForm.svelte'
   import Banner from './components/Banner.svelte'
@@ -10,12 +11,24 @@
   export let toggleModal
   export let width
 
+  let lowerBound = 400
   let navIsSticky = false
   const stickyNav = `position: sticky;
     position: -webkit-sticky;
     z-index: 99;
     top: 0;
     left: 0;`
+
+  const getStickyNavTrigger = () => {
+    const banner = document.getElementById('banner')
+    const bannerDims = banner.getBoundingClientRect()
+    const bannerLowerBound = bannerDims.bottom
+    lowerBound = bannerLowerBound
+  }
+
+  onMount(() => {
+    getStickyNavTrigger()
+  })
 
   const unsubscribeWidth = windowWidth.subscribe((value) => (width = value))
   const unsubscribeModal = needModal.subscribe((value) => {
@@ -27,8 +40,10 @@
   }
 
   const toggleStickyNav = () => {
-    window.scrollY >= 700 ? (navIsSticky = true) : (navIsSticky = false)
+    window.scrollY >= lowerBound ? (navIsSticky = true) : (navIsSticky = false)
   }
+
+  $: lowerBound
 </script>
 
 <style type="text/scss">
@@ -56,6 +71,7 @@
   on:scroll={toggleStickyNav}
   on:resize={() => {
     windowWidth.set(window.innerWidth)
+    getStickyNavTrigger()
   }} />
 
 <div>
