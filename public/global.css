@@ -77,7 +77,7 @@ button {
   cursor: pointer;
 }
 
-button:after {
+button.active-flash:after {
   content: '';
   background-color: var(--lightGray);
   display: flex;
@@ -92,7 +92,7 @@ button:after {
   transition: all 0.5s;
 }
 
-button:not(:disabled):active:after {
+button.active-flash:not(:disabled):active:after {
   top: 50%;
   left: 50%;
   height: 0;
