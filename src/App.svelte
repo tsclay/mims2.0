@@ -9,9 +9,11 @@
 
   export let toggleModal
   export let width
+
   let navIsSticky = false
   const stickyNav = `position: sticky;
     position: -webkit-sticky;
+    z-index: 99;
     top: 0;
     left: 0;`
 
