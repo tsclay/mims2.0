@@ -99,7 +99,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 100%;
+        width: 75px;
         height: 100%;
         padding: 4px;
         border-radius: 4px;
