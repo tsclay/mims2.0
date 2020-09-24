@@ -107,9 +107,9 @@
         color: var(--white);
         button {
           border: none;
+          padding: 0.25rem 0;
           margin: 0;
-          width: 40px;
-          // height: 20px;
+          width: 20px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -273,7 +273,7 @@
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.w3.org/2000/svg"
-                width="20"
+                width="100"
                 height="15"
                 viewBox="0 0 158.75 158.75"
                 version="1.1"
