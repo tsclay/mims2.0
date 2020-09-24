@@ -68,7 +68,7 @@
 
 <style type="text/scss">
   form {
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
     color: var(--darkAmber);
 
