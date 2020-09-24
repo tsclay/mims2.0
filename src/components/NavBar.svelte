@@ -16,7 +16,7 @@
     width: 100%;
     // background: rgb(255, 246, 126);
     background: var(--bannerGray);
-    :first-child {
+    > :first-child {
       margin-left: 0.25rem;
     }
     > :last-child {
@@ -46,6 +46,7 @@
     position: absolute;
     z-index: 2;
     right: 0.5rem;
+    top: 0;
     background: gray;
     border-radius: 4px;
     display: flex;
@@ -186,20 +187,17 @@
     {#if toggleModal}
       <div class="sm-modal">
         <button
-          class="active-flash"
           type="button"
           on:click={() => {
             window.scrollTo({ left: 0, top: 709, behavior: 'smooth' })
           }}>About</button>
-        <button class="active-flash" type="button">Gallery</button>
+        <button type="button">Gallery</button>
         <button
-          class="active-flash"
           type="button"
           on:click={() => {
             window.scrollTo({ left: 0, top: 1750, behavior: 'smooth' })
           }}>Testimonials</button>
         <button
-          class="active-flash"
           type="button"
           on:click={() => {
             window.scrollTo({ left: 0, top: 2330, behavior: 'smooth' })
