@@ -78,7 +78,7 @@
   <Banner />
   <NavBar {width} {toggleModal} {toggleNavButtons} {navIsSticky} {stickyNav} />
   <main>
-    <About />
+    <About {width} />
     <Testimonials />
     <svg
       xmlns:dc="http://purl.org/dc/elements/1.1/"
