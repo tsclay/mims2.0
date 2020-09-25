@@ -174,6 +174,12 @@
     transform-origin: center;
     transform: rotate(90deg);
   }
+
+  @media only screen and (max-width: 600px) {
+    #form-wrapper {
+      width: 90%;
+    }
+  }
 </style>
 
 <svelte:body
