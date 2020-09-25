@@ -4,6 +4,17 @@
   export let toggleNavButtons
   export let navIsSticky
   export let stickyNav
+
+  const scrollToTarget = (e) => {
+    const target = document.querySelector(
+      `#${e.target.innerText.toLowerCase()}`
+    ).offsetTop
+    window.scrollTo({
+      left: 0,
+      top: target - 100,
+      behavior: 'smooth'
+    })
+  }
 </script>
 
 <style type="text/scss">
@@ -178,22 +189,16 @@
       <button
         class="active-flash"
         type="button"
-        on:click={() => {
-          window.scrollTo({ left: 0, top: 709, behavior: 'smooth' })
-        }}>About</button>
+        on:click={scrollToTarget}>About</button>
       <button type="button">Gallery</button>
       <button
         class="active-flash"
         type="button"
-        on:click={() => {
-          window.scrollTo({ left: 0, top: 1750, behavior: 'smooth' })
-        }}>Testimonials</button>
+        on:click={scrollToTarget}>Testimonials</button>
       <button
         class="active-flash"
         type="button"
-        on:click={() => {
-          window.scrollTo({ left: 0, top: 2330, behavior: 'smooth' })
-        }}>Contact</button>
+        on:click={scrollToTarget}>Contact</button>
     </div>
   {:else}
     <button on:click|stopPropagation={toggleNavButtons} id="modal-toggler">
@@ -245,22 +250,10 @@
     </button>
     {#if toggleModal}
       <div class="sm-modal">
-        <button
-          type="button"
-          on:click={() => {
-            window.scrollTo({ left: 0, top: 709, behavior: 'smooth' })
-          }}>About</button>
+        <button type="button" on:click={scrollToTarget}>About</button>
         <button type="button">Gallery</button>
-        <button
-          type="button"
-          on:click={() => {
-            window.scrollTo({ left: 0, top: 1750, behavior: 'smooth' })
-          }}>Testimonials</button>
-        <button
-          type="button"
-          on:click={() => {
-            window.scrollTo({ left: 0, top: 2330, behavior: 'smooth' })
-          }}>Contact</button>
+        <button type="button" on:click={scrollToTarget}>Testimonials</button>
+        <button type="button" on:click={scrollToTarget}>Contact</button>
       </div>
     {/if}
   {/if}
