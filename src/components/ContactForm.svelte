@@ -90,7 +90,6 @@
       .sel-options {
         position: relative;
         z-index: 4;
-        width: 40%;
         display: flex;
         justify-content: space-between;
         cursor: pointer;
