@@ -1,24 +1,25 @@
 <script>
-  export let toggleModal
-  export let width
-  export let toggleNavButtons
-  export let navIsSticky
-  export let stickyNav
+  export let toggleModal;
+  export let width;
+  export let toggleNavButtons;
+  export let navIsSticky;
+  export let stickyNav;
 
   const scrollToTarget = (e) => {
     const target = document.querySelector(
       `#${e.target.innerText.toLowerCase()}`
-    ).offsetTop
+    ).offsetTop;
     window.scrollTo({
       left: 0,
       top: target - 100,
-      behavior: 'smooth'
-    })
-  }
+      behavior: "smooth",
+    });
+  };
 </script>
 
 <style type="text/scss">
   #nav-bar {
+    position: relative;
     height: 5rem;
     display: flex;
     flex-flow: row nowrap;
@@ -47,10 +48,6 @@
         margin-right: 0.25rem;
       }
     }
-    // :nth-child(1),
-    // :nth-child(2) {
-    //   margin-right: 0.25rem;
-    // }
   }
 
   .sm-modal {
