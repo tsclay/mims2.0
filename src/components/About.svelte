@@ -1,5 +1,5 @@
 <script>
-  export let width
+  export let width;
 </script>
 
 <style type="text/scss">
@@ -44,6 +44,7 @@
       img {
         width: 100%;
         margin: 0;
+        order: 1;
       }
     }
   }
