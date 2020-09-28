@@ -82,6 +82,8 @@
     <About {width} />
     <Gallery />
     <Testimonials />
+
+    <ContactForm {width} />
     <svg
       xmlns:dc="http://purl.org/dc/elements/1.1/"
       xmlns:cc="http://creativecommons.org/ns#"
@@ -94,16 +96,6 @@
       viewBox="0 0 142.875 122.50209"
       version="1.1"
       id="svg8">
-      <defs id="defs2" />
-      <metadata id="metadata5">
-        <rdf:RDF>
-          <cc:Work rdf:about="">
-            <dc:format>image/svg+xml</dc:format>
-            <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-            <dc:title />
-          </cc:Work>
-        </rdf:RDF>
-      </metadata>
       <g id="layer1" style="display:inline;opacity:1">
         <path
           style="fill:none;stroke:#deaa87;stroke-width:0.217909px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -683,7 +675,6 @@
           x="0"
           xlink:href="#path1030"
           id="use5114" />
-        <!-- <use transform="matrix(1.5836441,0.16648929,-0.27923918,0.94420771,6.5077235,-0.73509457)" height="100%" width="100%" y="0" x="0" xlink:href="#path1034" id="use5116" /> -->
         <use
           transform="matrix(1.5836441,0.16648929,-0.27923918,0.94420771,7.6125684,-0.8389501)"
           height="100%"
@@ -708,7 +699,6 @@
           x="0"
           xlink:href="#path1040"
           id="use5122" />
-        <!-- <use transform="matrix(1.5836441,0.16648929,-0.27923918,0.94420771,7.3127657,2.5831347)" height="100%" width="100%" y="0" x="0" xlink:href="#path1044" id="use5124" /> -->
         <use
           transform="matrix(1.5836441,0.16648929,-0.27923918,0.94420771,8.2167683,1.4779451)"
           height="100%"
@@ -1123,7 +1113,6 @@
           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.61;stroke-opacity:1" />
       </g>
     </svg>
-    <ContactForm {width} />
   </main>
   <Footer />
 </div>
