@@ -1,49 +1,50 @@
 <script>
-  import { onMount } from 'svelte'
-  import NavBar from './components/NavBar.svelte'
-  import ContactForm from './components/ContactForm.svelte'
-  import Banner from './components/Banner.svelte'
-  import About from './components/About.svelte'
-  import Testimonials from './components/Testimonials.svelte'
-  import Footer from './components/Footer.svelte'
-  import { windowWidth, needModal } from './stores.js'
+  import { onMount } from "svelte";
+  import NavBar from "./components/NavBar.svelte";
+  import ContactForm from "./components/ContactForm.svelte";
+  import Banner from "./components/Banner.svelte";
+  import About from "./components/About.svelte";
+  import Testimonials from "./components/Testimonials.svelte";
+  import Gallery from "./components/Gallery.svelte";
+  import Footer from "./components/Footer.svelte";
+  import { windowWidth, needModal } from "./stores.js";
 
-  export let toggleModal
-  export let width
+  export let toggleModal;
+  export let width;
 
-  let lowerBound = 400
-  let navIsSticky = false
+  let lowerBound = 400;
+  let navIsSticky = false;
   const stickyNav = `position: sticky;
     position: -webkit-sticky;
     z-index: 99;
     top: 0;
-    left: 0;`
+    left: 0;`;
 
   const getStickyNavTrigger = () => {
-    const banner = document.getElementById('banner')
-    const bannerDims = banner.getBoundingClientRect()
-    const bannerLowerBound = bannerDims.bottom
-    lowerBound = bannerLowerBound
-  }
+    const banner = document.getElementById("banner");
+    const bannerDims = banner.getBoundingClientRect();
+    const bannerLowerBound = bannerDims.bottom;
+    lowerBound = bannerLowerBound;
+  };
 
   onMount(() => {
-    getStickyNavTrigger()
-  })
+    getStickyNavTrigger();
+  });
 
-  const unsubscribeWidth = windowWidth.subscribe((value) => (width = value))
+  const unsubscribeWidth = windowWidth.subscribe((value) => (width = value));
   const unsubscribeModal = needModal.subscribe((value) => {
-    toggleModal = value
-  })
+    toggleModal = value;
+  });
 
   const toggleNavButtons = () => {
-    needModal.set(!toggleModal)
-  }
+    needModal.set(!toggleModal);
+  };
 
   const toggleStickyNav = () => {
-    window.scrollY >= lowerBound ? (navIsSticky = true) : (navIsSticky = false)
-  }
+    window.scrollY >= lowerBound ? (navIsSticky = true) : (navIsSticky = false);
+  };
 
-  $: lowerBound
+  $: lowerBound;
 </script>
 
 <style type="text/scss">
@@ -63,15 +64,15 @@
 <svelte:body
   on:click={(e) => {
     if (e.target.id !== 'modal-toggler') {
-      needModal.set(false)
+      needModal.set(false);
     }
   }} />
 
 <svelte:window
   on:scroll={toggleStickyNav}
   on:resize={() => {
-    windowWidth.set(window.innerWidth)
-    getStickyNavTrigger()
+    windowWidth.set(window.innerWidth);
+    getStickyNavTrigger();
   }} />
 
 <div>
@@ -79,6 +80,7 @@
   <NavBar {width} {toggleModal} {toggleNavButtons} {navIsSticky} {stickyNav} />
   <main>
     <About {width} />
+    <Gallery />
     <Testimonials />
     <svg
       xmlns:dc="http://purl.org/dc/elements/1.1/"
