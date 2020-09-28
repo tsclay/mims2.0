@@ -52,12 +52,6 @@
     margin: 0 auto;
     width: 90%;
     max-width: 1298px;
-
-    @for $i from 1 through 3 {
-      &:nth-child(#{$i}) {
-        margin-bottom: 2rem;
-      }
-    }
   }
 </style>
 
@@ -82,7 +76,6 @@
     <About {width} />
     <Gallery />
     <Testimonials />
-
     <ContactForm {width} />
     <svg
       xmlns:dc="http://purl.org/dc/elements/1.1/"
