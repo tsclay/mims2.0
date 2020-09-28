@@ -187,7 +187,7 @@
         class="active-flash"
         type="button"
         on:click={scrollToTarget}>About</button>
-      <button type="button">Gallery</button>
+      <button type="button" on:click={scrollToTarget}>Gallery</button>
       <button
         class="active-flash"
         type="button"
@@ -248,7 +248,7 @@
     {#if toggleModal}
       <div class="sm-modal">
         <button type="button" on:click={scrollToTarget}>About</button>
-        <button type="button">Gallery</button>
+        <button type="button" on:click={scrollToTarget}>Gallery</button>
         <button type="button" on:click={scrollToTarget}>Testimonials</button>
         <button type="button" on:click={scrollToTarget}>Contact</button>
       </div>
