@@ -27,9 +27,9 @@
     lowerBound = bannerLowerBound;
   };
 
-  onMount(() => {
-    getStickyNavTrigger();
-  });
+  // onMount(() => {
+  //   getStickyNavTrigger();
+  // });
 
   const unsubscribeWidth = windowWidth.subscribe((value) => (width = value));
   const unsubscribeModal = needModal.subscribe((value) => {
@@ -41,10 +41,12 @@
   };
 
   const toggleStickyNav = () => {
+    // if (navIsSticky) return;
     window.scrollY >= lowerBound ? (navIsSticky = true) : (navIsSticky = false);
   };
 
   $: lowerBound;
+  // getStickyNavTrigger(); // on:scroll={toggleStickyNav}
 </script>
 
 <style type="text/scss">
@@ -63,10 +65,8 @@
   }} />
 
 <svelte:window
-  on:scroll={toggleStickyNav}
   on:resize={() => {
     windowWidth.set(window.innerWidth);
-    getStickyNavTrigger();
   }} />
 
 <div>
