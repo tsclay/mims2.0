@@ -1,4 +1,5 @@
 <script>
+  import Image from "./Image.svelte";
   export let width;
 </script>
 
@@ -1180,10 +1181,11 @@
     </div>
   {/if}
 
-  <img
+  <!-- <img
     class="img-left"
     src="./assets/img/1925new.jpg"
-    alt="Mims Painting, 1925" />
+    alt="Mims Painting, 1925" /> -->
+  <Image gridArea="1/1/1/1" imgSrc="./assets/img/tinified/1925new.jpg" imgSrcTiny={"./assets/img-blurry/1925blurred.jpg"} imgAlt="Mims Painting, 1925"/>
   <div class="about-text1">
     <h1>Six generations of excellence</h1>
     <p>
@@ -1209,15 +1211,19 @@
       homeowners to ensure they will get a well run, quality paint job.
     </p>
   </div>
-  <img
+  <!-- <img
     class="img-right"
     src="./assets/img/rebarnes3.jpg"
-    alt="Paint work on non-conventional canvases" />
+    alt="Paint work on non-conventional canvases" /> -->
+  <Image gridArea="2/3/2/3" imgSrc="./assets/img/tinified/rebarnes3.jpg" imgSrcTiny={"./assets/img-blurry/rebarnes3blurred.jpg"} imgAlt="Paint work on non-conventional canvases"/>
 
-  <img
+  <!-- <img
     class="img-left"
     src="./assets/img/parrish2.jpg"
-    alt="Painting a house in the Hamptons" />
+    alt="Painting a house in the Hamptons" /> -->
+  <Image gridArea="3/1/3/1" imgSrc="./assets/img/tinified/parrish2.jpg" imgSrcTiny={"./assets/img-blurry/parrish2blurred.jpg"} imgAlt="Blah"/>
+    
+
   <div class="about-text3">
     <h1>Serving Residential & Commercial</h1>
     <p>
@@ -1247,8 +1253,9 @@
       plans.
     </p>
   </div>
-  <img
+  <!-- <img
     class="img-right"
     src="./assets/img/rekean3.jpg"
-    alt="Painter on a ladder painting a window" />
+    alt="Painter on a ladder painting a window" /> -->
+  <Image gridArea="4/3/4/3" imgSrc="./assets/img/tinified/rekean3.jpg" imgSrcTiny={"./assets/img-blurry/rekean3blurred.jpg"} imgAlt="Blah"/>
 </div>
