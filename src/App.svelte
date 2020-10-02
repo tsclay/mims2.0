@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from "svelte";
   import NavBar from "./components/NavBar.svelte";
   import ContactForm from "./components/ContactForm.svelte";
   import Banner from "./components/Banner.svelte";
