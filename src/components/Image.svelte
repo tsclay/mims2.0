@@ -5,7 +5,7 @@
   export let imgSrc = "#";
   export let imgSrcTiny = imgSrc;
   export let imgAlt = "Image";
-  export let gridArea, styleOverride;
+  export let gridArea, styleOverride, isGallery;
 
   let isAbsolute = false;
   let isStatic = false;
@@ -30,6 +30,11 @@
     position: static;
   }
 
+  .isGallery {
+    width: 400px;
+    height: 400px;
+  }
+
   img {
     width: 100%;
     align-self: stretch;
@@ -41,9 +46,16 @@
 
 <VisibilityGuard let:hasBeenVisible {gridArea} {styleOverride}>
   {#if hasBeenVisible}
-    <img in:fade class:isAbsolute class:isStatic src={imgSrc} alt={imgAlt} />
+    <img
+      in:fade
+      class:isAbsolute
+      class:isStatic
+      class:isGallery
+      src={imgSrc}
+      alt={imgAlt} />
   {:else}
     <img
+      class:isGallery
       out:fade
       on:outrostart={setPosToAbsolute}
       on:outroend={setPosToStatic}

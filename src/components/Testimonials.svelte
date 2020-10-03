@@ -30,10 +30,10 @@
 </script>
 
 <style type="text/scss">
-  img {
-    width: 400px;
-    height: 400px;
-  }
+  // img {
+  //   width: 400px;
+  //   height: 400px;
+  // }
 
   .carousel-wrapper {
     position: relative;
@@ -47,6 +47,8 @@
     top: 0;
     display: flex;
     flex-flow: row nowrap;
+    overflow-y: hidden;
+    height: 400px;
     width: 100%;
     overflow-x: auto;
 
