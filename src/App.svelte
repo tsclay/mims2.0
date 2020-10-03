@@ -1,49 +1,51 @@
 <script>
-  import { onMount } from 'svelte'
-  import NavBar from './components/NavBar.svelte'
-  import ContactForm from './components/ContactForm.svelte'
-  import Banner from './components/Banner.svelte'
-  import About from './components/About.svelte'
-  import Testimonials from './components/Testimonials.svelte'
-  import Footer from './components/Footer.svelte'
-  import { windowWidth, needModal } from './stores.js'
+  import NavBar from "./components/NavBar.svelte";
+  import ContactForm from "./components/ContactForm.svelte";
+  import Banner from "./components/Banner.svelte";
+  import About from "./components/About.svelte";
+  import Testimonials from "./components/Testimonials.svelte";
+  import Gallery from "./components/Gallery.svelte";
+  import Footer from "./components/Footer.svelte";
+  import { windowWidth, needModal } from "./stores.js";
 
-  export let toggleModal
-  export let width
+  export let toggleModal;
+  export let width;
 
-  let lowerBound = 400
-  let navIsSticky = false
+  let lowerBound = 400;
+  let navIsSticky = false;
   const stickyNav = `position: sticky;
     position: -webkit-sticky;
     z-index: 99;
     top: 0;
-    left: 0;`
+    left: 0;`;
 
   const getStickyNavTrigger = () => {
-    const banner = document.getElementById('banner')
-    const bannerDims = banner.getBoundingClientRect()
-    const bannerLowerBound = bannerDims.bottom
-    lowerBound = bannerLowerBound
-  }
+    const banner = document.getElementById("banner");
+    const bannerDims = banner.getBoundingClientRect();
+    const bannerLowerBound = bannerDims.bottom;
+    lowerBound = bannerLowerBound;
+  };
 
-  onMount(() => {
-    getStickyNavTrigger()
-  })
+  // onMount(() => {
+  //   getStickyNavTrigger();
+  // });
 
-  const unsubscribeWidth = windowWidth.subscribe((value) => (width = value))
+  const unsubscribeWidth = windowWidth.subscribe((value) => (width = value));
   const unsubscribeModal = needModal.subscribe((value) => {
-    toggleModal = value
-  })
+    toggleModal = value;
+  });
 
   const toggleNavButtons = () => {
-    needModal.set(!toggleModal)
-  }
+    needModal.set(!toggleModal);
+  };
 
   const toggleStickyNav = () => {
-    window.scrollY >= lowerBound ? (navIsSticky = true) : (navIsSticky = false)
-  }
+    // if (navIsSticky) return;
+    window.scrollY >= lowerBound ? (navIsSticky = true) : (navIsSticky = false);
+  };
 
-  $: lowerBound
+  $: lowerBound;
+  // getStickyNavTrigger(); // on:scroll={toggleStickyNav}
 </script>
 
 <style type="text/scss">
@@ -51,27 +53,19 @@
     margin: 0 auto;
     width: 90%;
     max-width: 1298px;
-
-    @for $i from 1 through 3 {
-      &:nth-child(#{$i}) {
-        margin-bottom: 2rem;
-      }
-    }
   }
 </style>
 
 <svelte:body
   on:click={(e) => {
     if (e.target.id !== 'modal-toggler') {
-      needModal.set(false)
+      needModal.set(false);
     }
   }} />
 
 <svelte:window
-  on:scroll={toggleStickyNav}
   on:resize={() => {
-    windowWidth.set(window.innerWidth)
-    getStickyNavTrigger()
+    windowWidth.set(window.innerWidth);
   }} />
 
 <div>
@@ -79,7 +73,9 @@
   <NavBar {width} {toggleModal} {toggleNavButtons} {navIsSticky} {stickyNav} />
   <main>
     <About {width} />
+    <Gallery />
     <Testimonials />
+    <ContactForm {width} />
     <svg
       xmlns:dc="http://purl.org/dc/elements/1.1/"
       xmlns:cc="http://creativecommons.org/ns#"
@@ -92,16 +88,6 @@
       viewBox="0 0 142.875 122.50209"
       version="1.1"
       id="svg8">
-      <defs id="defs2" />
-      <metadata id="metadata5">
-        <rdf:RDF>
-          <cc:Work rdf:about="">
-            <dc:format>image/svg+xml</dc:format>
-            <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-            <dc:title />
-          </cc:Work>
-        </rdf:RDF>
-      </metadata>
       <g id="layer1" style="display:inline;opacity:1">
         <path
           style="fill:none;stroke:#deaa87;stroke-width:0.217909px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -681,7 +667,6 @@
           x="0"
           xlink:href="#path1030"
           id="use5114" />
-        <!-- <use transform="matrix(1.5836441,0.16648929,-0.27923918,0.94420771,6.5077235,-0.73509457)" height="100%" width="100%" y="0" x="0" xlink:href="#path1034" id="use5116" /> -->
         <use
           transform="matrix(1.5836441,0.16648929,-0.27923918,0.94420771,7.6125684,-0.8389501)"
           height="100%"
@@ -706,7 +691,6 @@
           x="0"
           xlink:href="#path1040"
           id="use5122" />
-        <!-- <use transform="matrix(1.5836441,0.16648929,-0.27923918,0.94420771,7.3127657,2.5831347)" height="100%" width="100%" y="0" x="0" xlink:href="#path1044" id="use5124" /> -->
         <use
           transform="matrix(1.5836441,0.16648929,-0.27923918,0.94420771,8.2167683,1.4779451)"
           height="100%"
@@ -1121,7 +1105,6 @@
           style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.61;stroke-opacity:1" />
       </g>
     </svg>
-    <ContactForm {width} />
   </main>
   <Footer />
 </div>

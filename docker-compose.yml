@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  svelte:
+    image: svelte-template:dev
+    build:
+      context: .
+    volumes:
+      - ".:/usr/src/app"
+    ports:
+      - "5000:5000"
+      - "35729:35729"
+    command: npm run dev
+    networks:
+      - svelte
+
+networks:
+  svelte:

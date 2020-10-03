@@ -18,8 +18,12 @@
 </script>
 
 <style type="text/scss">
-  #nav-bar {
-    position: relative;
+  #my-nav-bar {
+    // position: relative;
+    position: sticky;
+    position: -webkit-sticky;
+    z-index: 99;
+    top: 0;
     height: 5rem;
     display: flex;
     flex-flow: row nowrap;
@@ -79,7 +83,7 @@
   }
 </style>
 
-<div id="nav-bar" style={navIsSticky ? stickyNav : null}>
+<div id="my-nav-bar" style={navIsSticky ? stickyNav : null}>
   <svg
     xmlns:dc="http://purl.org/dc/elements/1.1/"
     xmlns:cc="http://creativecommons.org/ns#"
@@ -187,7 +191,7 @@
         class="active-flash"
         type="button"
         on:click={scrollToTarget}>About</button>
-      <button type="button">Gallery</button>
+      <button type="button" on:click={scrollToTarget}>Gallery</button>
       <button
         class="active-flash"
         type="button"
@@ -248,7 +252,7 @@
     {#if toggleModal}
       <div class="sm-modal">
         <button type="button" on:click={scrollToTarget}>About</button>
-        <button type="button">Gallery</button>
+        <button type="button" on:click={scrollToTarget}>Gallery</button>
         <button type="button" on:click={scrollToTarget}>Testimonials</button>
         <button type="button" on:click={scrollToTarget}>Contact</button>
       </div>
