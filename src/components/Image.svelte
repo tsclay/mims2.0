@@ -5,7 +5,7 @@
   export let imgSrc = "#";
   export let imgSrcTiny = imgSrc;
   export let imgAlt = "Image";
-  export let gridArea;
+  export let gridArea, styleOverride;
 
   let isAbsolute = false;
   let isStatic = false;
@@ -39,7 +39,7 @@
   }
 </style>
 
-<VisibilityGuard let:hasBeenVisible {gridArea}>
+<VisibilityGuard let:hasBeenVisible {gridArea} {styleOverride}>
   {#if hasBeenVisible}
     <img in:fade class:isAbsolute class:isStatic src={imgSrc} alt={imgAlt} />
   {:else}

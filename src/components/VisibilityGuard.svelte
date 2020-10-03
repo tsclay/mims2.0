@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
 
-  export let gridArea;
+  export let gridArea, styleOverride;
 
   let el = null;
   let visible = false;
@@ -30,6 +30,8 @@
   }
 </script>
 
-<div bind:this={el} style="position: relative; grid-area: {gridArea}">
+<div
+  bind:this={el}
+  style="position: relative; {gridArea ? `grid-area: ${gridArea}` : ''} {styleOverride ? styleOverride : ''}">
   <slot {visible} {hasBeenVisible} />
 </div>
