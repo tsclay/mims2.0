@@ -1,4 +1,5 @@
 <script>
+  import Image from "./Image.svelte";
   let images = [
     "../assets/testimonials/testimonial2014-02-27-at-9-14-30-am.png",
     "../assets/testimonials/testimonial2014-02-27-at-9-16-21-am.png",
@@ -37,7 +38,7 @@
   .carousel-wrapper {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 400px;
     display: flex;
     justify-content: center;
   }
@@ -49,13 +50,13 @@
     width: 100%;
     overflow-x: auto;
 
-    @for $i from 1 through 25 {
-      @if $i != 25 {
-        img:nth-of-type(#{$i}) {
-          margin-right: 1rem;
-        }
-      }
-    }
+    // @for $i from 1 through 25 {
+    //   @if $i != 25 {
+    //     img:nth-of-type(#{$i}) {
+    //       margin-right: 1rem;
+    //     }
+    //   }
+    // }
   }
   // .quote-block {
   //   background: rgba(141, 141, 141, 0.753);
@@ -89,7 +90,10 @@
   </p>
   <div class="carousel-wrapper">
     <div class="carousel-container">
-      {#each images as image, i}<img src={image} alt="Testimonial-{i}" />{/each}
+      <!-- {#each images as image, i}<img src={image} alt="Testimonial-{i}" />{/each} -->
+      {#each images as image, i}
+      <Image styleOverride="margin-right: 1rem; width: 400px; height: 400px; flex-shrink: 0;" imgSrc="{image}" imgSrcTiny={"./assets/img-blurry/1925blurred.jpg"} imgAlt="Testimonial-{i}"/>
+      {/each}
     </div>
   </div>
   <!-- <div class="quote-block">
