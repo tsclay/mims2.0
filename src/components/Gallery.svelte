@@ -52,7 +52,7 @@
     <div class="carousel-container">
       <!-- {#each images as image, i}<img src={image} alt="Testimonial-{i}" />{/each} -->
       {#each images as image, i}
-      <Image styleOverride="margin-right: 1rem; width: 400px; height: 400px; flex-shrink: 0;" imgSrc="{image}" imgSrcTiny={"./assets/img-blurry/1925blurred.jpg"} imgAlt="Testimonial-{i}"/>
+      <Image styleOverride="margin-right: 1rem; width: 400px; height: 400px; flex-shrink: 0;" imgSrc="{image}" imgSrcTiny={"./assets/img-blurry/1925blurred.jpg"} imgAlt="Gallery-{i}"/>
       {/each}
     </div>
   </div>
