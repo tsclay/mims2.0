@@ -1,4 +1,5 @@
 <script>
+  import Image from "./Image.svelte";
   let images = [
     "../assets/img/barnes3.jpg",
     "../assets/img/inside.jpg",
@@ -22,7 +23,7 @@
   .carousel-wrapper {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 400px;
     display: flex;
     justify-content: center;
   }
@@ -34,13 +35,13 @@
     width: 100%;
     overflow-x: auto;
 
-    @for $i from 1 through 10 {
-      @if $i != 10 {
-        img:nth-of-type(#{$i}) {
-          margin-right: 1rem;
-        }
-      }
-    }
+    // @for $i from 1 through 10 {
+    //   @if $i != 10 {
+    //     img:nth-of-type(#{$i}) {
+    //       margin-right: 1rem;
+    //     }
+    //   }
+    // }
   }
 </style>
 
@@ -49,7 +50,10 @@
   <p>Check out our gallery below!</p>
   <div class="carousel-wrapper">
     <div class="carousel-container">
-      {#each images as image, i}<img src={image} alt="Testimonial-{i}" />{/each}
+      <!-- {#each images as image, i}<img src={image} alt="Testimonial-{i}" />{/each} -->
+      {#each images as image, i}
+      <Image styleOverride="margin-right: 1rem; width: 400px; height: 400px; flex-shrink: 0;" imgSrc="{image}" imgSrcTiny={"./assets/img-blurry/1925blurred.jpg"} imgAlt="Testimonial-{i}"/>
+      {/each}
     </div>
   </div>
 </div>
