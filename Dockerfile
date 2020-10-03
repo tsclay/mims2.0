@@ -11,12 +11,11 @@ RUN npm install
 COPY ./src ./src
 COPY ./public ./public
 
-# RUN npm run-script build
-
 EXPOSE 5000
 
 ENV HOST=0.0.0.0
 
-# CMD [ "npm", "start" ]
+RUN npm run-script build
+CMD [ "npm", "start" ]
 
-ENTRYPOINT npm run dev
+# ENTRYPOINT npm run dev

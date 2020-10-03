@@ -10,6 +10,7 @@ services:
     ports:
       - "5000:5000"
       - "35729:35729"
+    command: npm run dev
     networks:
       - svelte
 
