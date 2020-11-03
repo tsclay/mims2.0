@@ -140,13 +140,12 @@
   }
 
   .error-wrapper {
-    height: 32px;
+    max-height: 32px;
     margin: 0.5rem 0;
-    transition: height 0.15s linear;
+    transition: max-height 150ms linear;
   }
   .error-wrapper:empty {
-    height: 0;
-    margin: 0;
+    max-height: 0;
   }
 
   .error-containers {
