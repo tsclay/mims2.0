@@ -98,7 +98,7 @@
 
 <!-- 423.33334 -->
 <div class="component" id="about">
-  <div class="ladder-wrapper" style={width < 600 ? "grid-area: 1/1/9/1" : ""}>
+  <div class="ladder-wrapper" style={width < 600 ? 'grid-area: 1/1/9/1' : ''}>
     <svg
       xmlns:dc="http://purl.org/dc/elements/1.1/"
       xmlns:cc="http://creativecommons.org/ns#"
@@ -459,7 +459,11 @@
     class="img-left"
     src="./assets/img/1925new.jpg"
     alt="Mims Painting, 1925" /> -->
-  <Image gridArea="{width > 600 ? "1/1/1/1" : "2/1/2/1"}" imgSrc="./assets/img/tinified/1925new.jpg" imgSrcTiny={"./assets/img-blurry/1925blurred.jpg"} imgAlt="Mims Painting, 1925"/>
+  <Image
+    gridArea={width > 600 ? '1/1/1/1' : '2/1/2/1'}
+    imgSrc="./assets/img/tinified/inside.jpg"
+    imgSrcTiny={'./assets/img-blurry/1925blurred.jpg'}
+    imgAlt="Mims Painting, 1925" />
   <div class="about-text1">
     <h1>Six generations of excellence</h1>
     <p>
@@ -489,14 +493,21 @@
     class="img-right"
     src="./assets/img/rebarnes3.jpg"
     alt="Paint work on non-conventional canvases" /> -->
-  <Image gridArea="{width > 600 ? "2/3/2/3" : "4/1/4/1"}" imgSrc="./assets/img/tinified/rebarnes3.jpg" imgSrcTiny={"./assets/img-blurry/rebarnes3blurred.jpg"} imgAlt="Paint work on non-conventional canvases"/>
+  <Image
+    gridArea={width > 600 ? '2/3/2/3' : '4/1/4/1'}
+    imgSrc="./assets/img/tinified/rebarnes3.jpg"
+    imgSrcTiny={'./assets/img-blurry/rebarnes3blurred.jpg'}
+    imgAlt="Paint work on non-conventional canvases" />
 
   <!-- <img
     class="img-left"
     src="./assets/img/parrish2.jpg"
     alt="Painting a house in the Hamptons" /> -->
-  <Image gridArea="{width > 600 ? "3/1/3/1" : "6/1/6/1"}" imgSrc="./assets/img/tinified/parrish2.jpg" imgSrcTiny={"./assets/img-blurry/parrish2blurred.jpg"} imgAlt="Blah"/>
-    
+  <Image
+    gridArea={width > 600 ? '3/1/3/1' : '6/1/6/1'}
+    imgSrc="./assets/img/tinified/parrish2.jpg"
+    imgSrcTiny={'./assets/img-blurry/parrish2blurred.jpg'}
+    imgAlt="Blah" />
 
   <div class="about-text3">
     <h1>Serving Residential & Commercial</h1>
@@ -531,5 +542,9 @@
     class="img-right"
     src="./assets/img/rekean3.jpg"
     alt="Painter on a ladder painting a window" /> -->
-  <Image gridArea="{width > 600 ? "4/3/4/3" : "8/1/8/1"}" imgSrc="./assets/img/tinified/rekean3.jpg" imgSrcTiny={"./assets/img-blurry/rekean3blurred.jpg"} imgAlt="Blah"/>
+  <Image
+    gridArea={width > 600 ? '4/3/4/3' : '8/1/8/1'}
+    imgSrc="./assets/img/tinified/rekean3.jpg"
+    imgSrcTiny={'./assets/img-blurry/rekean3blurred.jpg'}
+    imgAlt="Blah" />
 </div>
