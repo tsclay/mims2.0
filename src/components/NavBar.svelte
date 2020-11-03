@@ -77,6 +77,9 @@
     justify-content: center;
   }
 
+  svg {
+    padding-top: 2px;
+  }
   .burger-bars {
     fill: var(--white);
   }
@@ -203,48 +206,40 @@
   {:else}
     <button on:click|stopPropagation={toggleNavButtons} id="modal-toggler">
       <svg
-        xmlns:dc="http://purl.org/dc/elements/1.1/"
-        xmlns:cc="http://creativecommons.org/ns#"
-        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-        xmlns:svg="http://www.w3.org/2000/svg"
         xmlns="http://www.w3.org/2000/svg"
         width="100%"
         height="100%"
-        viewBox="0 0 135.46666 116.94583"
-        version="1.1"
-        id="svg8">
-        <g id="layer1">
-          <g
-            id="g842"
-            transform="matrix(0.99618808,0,0,0.99997149,-34.076739,-84.989974)">
-            <rect
-              class="burger-bars"
-              ry="15.501632"
-              y="86.060791"
-              x="35.279579"
-              height="31.003263"
-              width="134.70384"
-              id="rect833"
-              style="fill-opacity:1;" />
-            <rect
-              class="burger-bars"
-              style="fill-opacity:1;"
-              id="rect835"
-              width="134.70384"
-              height="31.003263"
-              x="35.279579"
-              y="128.39412"
-              ry="15.501632" />
-            <rect
-              class="burger-bars"
-              ry="15.501632"
-              y="170.72749"
-              x="35.279579"
-              height="31.003263"
-              width="134.70384"
-              id="rect837"
-              style="fill-opacity:1;" />
-          </g>
+        viewBox="0 0 135.46666 116.94583">
+        <g
+          class="burger-wrapper"
+          transform="matrix(0.99618808,0,0,0.99997149,-34.076739,-84.989974)">
+          <rect
+            class="burger-bars"
+            ry="15.501632"
+            y="86.060791"
+            x="35.279579"
+            height="18.003263"
+            width="134.70384"
+            id="rect833"
+            style="fill-opacity:1;" />
+          <rect
+            class="burger-bars"
+            style="fill-opacity:1;"
+            id="rect835"
+            width="134.70384"
+            height="18.003263"
+            x="35.279579"
+            y="128.39412"
+            ry="15.501632" />
+          <rect
+            class="burger-bars"
+            ry="15.501632"
+            y="170.72749"
+            x="35.279579"
+            height="18.003263"
+            width="134.70384"
+            id="rect837"
+            style="fill-opacity:1;" />
         </g>
       </svg>
     </button>
