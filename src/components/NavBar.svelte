@@ -22,7 +22,7 @@
     // position: relative;
     position: sticky;
     position: -webkit-sticky;
-    z-index: 99;
+    z-index: 10;
     top: 0;
     height: 5rem;
     display: flex;
