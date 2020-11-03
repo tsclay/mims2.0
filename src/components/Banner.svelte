@@ -4,8 +4,9 @@
 <style type="text/scss">
   #banner {
     position: relative;
-    img {
+    .banner-bkgd {
       width: 100%;
+      min-height: 500px;
       position: relative;
     }
   }
@@ -18,6 +19,10 @@
     bottom: 50%;
     transform: translateY(50%);
     width: 100%;
+    img {
+      width: 100%;
+      position: relative;
+    }
   }
 
   .logo-wrapper {
@@ -33,7 +38,10 @@
 </style>
 
 <div id="banner">
-  <img src="../assets/img/1925new.jpg" alt="Mims Family Painting" />
+  <img
+    class="banner-bkgd"
+    src="../assets/img/1925new.jpg"
+    alt="Mims Family Painting" />
   <div class="banner-text-wrapper">
     <div class="logo-wrapper">
       <img src="../assets/img/NEWNEWLOGO.png" alt="logo" />
