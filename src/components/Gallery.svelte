@@ -1,5 +1,6 @@
 <script>
   import Image from "./Image.svelte";
+  let modalImgSrc;
   let images = [
     "../assets/img/barnes3.jpg",
     "../assets/img/inside.jpg",
@@ -12,6 +13,12 @@
     "../assets/img/rekean3.jpg",
     "../assets/img/reparish1.jpg",
   ];
+
+  const openImgModal = (e) => {
+    console.log(e.detail);
+    modalImgSrc = e.detail.imgSrc;
+    return modalImgSrc;
+  };
 </script>
 
 <style type="text/scss">
@@ -23,7 +30,7 @@
   .carousel-wrapper {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 200px;
     display: flex;
     justify-content: center;
   }
@@ -45,6 +52,32 @@
     //   }
     // }
   }
+  .img-modal-wrapper {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(99, 98, 98, 0.568);
+  }
+
+  .img-modal-container {
+    position: relative;
+    width: 100%;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
 </style>
 
 <div id="gallery" class="component">
@@ -54,8 +87,22 @@
     <div class="carousel-container">
       <!-- {#each images as image, i}<img src={image} alt="Testimonial-{i}" />{/each} -->
       {#each images as image, i}
-      <Image isGallery styleOverride="margin-right: 1rem; width: 400px; height: 400px; flex-shrink: 0;" imgSrc="{image}" imgSrcTiny={"./assets/img-blurry/1925blurred.jpg"} imgAlt="Gallery-{i}"/>
+        <Image
+          on:openImg={openImgModal}
+          isGallery
+          styleOverride="margin-right: 1rem; width: 200px; height: 200px; flex-shrink: 0;"
+          imgSrc={image}
+          imgSrcTiny={'./assets/img-blurry/1925blurred.jpg'}
+          imgAlt="Gallery-{i}" />
       {/each}
     </div>
   </div>
+  {#if modalImgSrc}
+    <div class="img-modal-wrapper">
+      <div class="img-modal-container">
+        <button on:click={() => (modalImgSrc = null)}>X</button>
+        <img src={modalImgSrc} alt="Whoops" />
+      </div>
+    </div>
+  {/if}
 </div>

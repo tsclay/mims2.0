@@ -1,6 +1,7 @@
 <script>
   import VisibilityGuard from "./VisibilityGuard.svelte";
   import { fade } from "svelte/transition";
+  import { createEventDispatcher } from "svelte";
 
   export let imgSrc = "#";
   export let imgSrcTiny = imgSrc;
@@ -10,6 +11,8 @@
   let isAbsolute = false;
   let isStatic = false;
 
+  const dispatch = createEventDispatcher();
+
   function setPosToAbsolute() {
     isAbsolute = true;
     isStatic = false;
@@ -17,6 +20,12 @@
   function setPosToStatic() {
     isAbsolute = false;
     isStatic = true;
+  }
+
+  function forwardImgClick(e) {
+    dispatch("openImg", {
+      imgSrc,
+    });
   }
 </script>
 
@@ -31,8 +40,8 @@
   }
 
   .isGallery {
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    height: auto;
   }
 
   img {
@@ -52,7 +61,8 @@
       class:isStatic
       class:isGallery
       src={imgSrc}
-      alt={imgAlt} />
+      alt={imgAlt}
+      on:click={forwardImgClick} />
   {:else}
     <img
       class:isGallery
