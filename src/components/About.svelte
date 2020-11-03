@@ -24,30 +24,6 @@
       width: 100%;
     }
   }
-  // img {
-  //   width: 100%;
-  //   align-self: stretch;
-  //   height: 100%;
-  //   min-height: 290px;
-  //   border-radius: 4px;
-  // }
-
-  // img:nth-of-type(1) {
-  //   grid-area: 1/1/1/1;
-  // }
-
-  // img:nth-of-type(2) {
-  //   grid-area: 2/3/2/3;
-  // }
-
-  // img:nth-of-type(3) {
-  //   grid-area: 3/1/3/1;
-  // }
-
-  // img:nth-of-type(4) {
-  //   grid-area: 4/3/4/3;
-  // }
-
   h1 {
     margin-top: 0;
   }
@@ -66,33 +42,21 @@
       grid-row: 1/1;
       grid-column: 1/1;
     }
-    // img:nth-of-type(1) {
-    //   grid-row: 2/2;
-    // }
 
     .about-text2 {
       grid-row: 3/3;
       grid-column: 1/1;
     }
-    // img:nth-of-type(2) {
-    //   grid-row: 4/4;
-    // }
 
     .about-text3 {
       grid-row: 5/5;
       grid-column: 1/1;
     }
-    // img:nth-of-type(3) {
-    //   grid-row: 6/6;
-    // }
 
     .about-text4 {
       grid-row: 7/7;
       grid-column: 1/1;
     }
-    // img:nth-of-type(4) {
-    //   grid-row: 8/8;
-    // }
   }
 </style>
 
@@ -455,10 +419,6 @@
     </svg>
   </div>
 
-  <!-- <img
-    class="img-left"
-    src="./assets/img/1925new.jpg"
-    alt="Mims Painting, 1925" /> -->
   <Image
     gridArea={width > 600 ? '1/1/1/1' : '2/1/2/1'}
     imgSrc="./assets/img/tinified/inside.jpg"
@@ -489,20 +449,13 @@
       homeowners to ensure they will get a well run, quality paint job.
     </p>
   </div>
-  <!-- <img
-    class="img-right"
-    src="./assets/img/rebarnes3.jpg"
-    alt="Paint work on non-conventional canvases" /> -->
+
   <Image
     gridArea={width > 600 ? '2/3/2/3' : '4/1/4/1'}
     imgSrc="./assets/img/tinified/rebarnes3.jpg"
     imgSrcTiny={'./assets/img-blurry/rebarnes3blurred.jpg'}
     imgAlt="Paint work on non-conventional canvases" />
 
-  <!-- <img
-    class="img-left"
-    src="./assets/img/parrish2.jpg"
-    alt="Painting a house in the Hamptons" /> -->
   <Image
     gridArea={width > 600 ? '3/1/3/1' : '6/1/6/1'}
     imgSrc="./assets/img/tinified/parrish2.jpg"
@@ -538,10 +491,6 @@
       plans.
     </p>
   </div>
-  <!-- <img
-    class="img-right"
-    src="./assets/img/rekean3.jpg"
-    alt="Painter on a ladder painting a window" /> -->
   <Image
     gridArea={width > 600 ? '4/3/4/3' : '8/1/8/1'}
     imgSrc="./assets/img/tinified/rekean3.jpg"

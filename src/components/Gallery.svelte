@@ -22,11 +22,6 @@
 </script>
 
 <style type="text/scss">
-  // img {
-  //   width: 400px;
-  //   height: 400px;
-  // }
-
   .carousel-wrapper {
     position: relative;
     width: 100%;
@@ -43,14 +38,6 @@
     // height: 400px;
     width: 100%;
     overflow-x: auto;
-
-    // @for $i from 1 through 10 {
-    //   @if $i != 10 {
-    //     img:nth-of-type(#{$i}) {
-    //       margin-right: 1rem;
-    //     }
-    //   }
-    // }
   }
   .img-modal-wrapper {
     position: fixed;
@@ -85,7 +72,6 @@
   <p>Check out our gallery below!</p>
   <div class="carousel-wrapper">
     <div class="carousel-container">
-      <!-- {#each images as image, i}<img src={image} alt="Testimonial-{i}" />{/each} -->
       {#each images as image, i}
         <Image
           on:openImg={openImgModal}

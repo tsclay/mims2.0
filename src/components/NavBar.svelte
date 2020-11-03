@@ -30,7 +30,6 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    // background: rgb(255, 246, 126);
     background: var(--bannerGray);
     > :first-child {
       margin-left: 0.25rem;

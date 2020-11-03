@@ -4,7 +4,6 @@
 
 <style type="text/scss">
   #footer {
-    /* background: rgb(255, 246, 126); */
     background: var(--bannerGray);
     display: flex;
     flex-flow: column nowrap;
@@ -56,7 +55,8 @@
     </div>
   </div>
   <p>
-    Copyright © 1868-{currentYear} Mims Family Painting All Rights Reserved.
+    Copyright © 1868-{currentYear}
+    Mims Family Painting All Rights Reserved.
   </p>
   <p>Website designed by Tim Clay.</p>
 </div>
