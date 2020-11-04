@@ -146,6 +146,7 @@
   }
   .error-wrapper:empty {
     max-height: 0;
+    margin: 0;
   }
 
   .error-containers {
