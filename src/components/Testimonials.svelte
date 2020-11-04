@@ -73,11 +73,14 @@
     width: 100%;
     img {
       width: 100%;
-      height: auto;
+      height: 75%;
     }
     button {
       position: absolute;
-      top: 0;
+      bottom: 0;
+      right: 4px;
+      border-radius: 2rem;
+      background: rgba(49, 49, 49, 0.5);
     }
   }
 </style>
