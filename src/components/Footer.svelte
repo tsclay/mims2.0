@@ -1,10 +1,9 @@
 <script>
-  const currentYear = new Date().getUTCFullYear();
+  const currentYear = new Date().getUTCFullYear()
 </script>
 
 <style type="text/scss">
   #footer {
-    /* background: rgb(255, 246, 126); */
     background: var(--bannerGray);
     display: flex;
     flex-flow: column nowrap;
@@ -52,11 +51,16 @@
     </div>
     <div class="company-contact">
       <p>Mims Family Painting</p>
-      <p>631-281-5815 | mims@mimspainting.com</p>
+      <p>
+        <a href="tel:+16312815815">631-281-5815</a>
+        |
+        <a href="mailto:mims@mimspainting.com">mims@mimspainting.com</a>
+      </p>
     </div>
   </div>
   <p>
-    Copyright © 1868-{currentYear} Mims Family Painting All Rights Reserved.
+    Copyright © 1868-{currentYear}
+    Mims Family Painting All Rights Reserved.
   </p>
   <p>Website designed by Tim Clay.</p>
 </div>

@@ -1,29 +1,30 @@
 <script>
-  import Image from "./Image.svelte";
+  import Image from './Image.svelte'
+  let modalImgSrc
   let images = [
-    "../assets/img/barnes3.jpg",
-    "../assets/img/inside.jpg",
-    "../assets/img/parrish2.jpg",
-    "../assets/img/rebarnes.jpg",
-    "../assets/img/rebarnes1.jpg",
-    "../assets/img/rebarnes3.jpg",
-    "../assets/img/rekean1.jpg",
-    "../assets/img/rekean2.jpg",
-    "../assets/img/rekean3.jpg",
-    "../assets/img/reparish1.jpg",
-  ];
+    '../assets/img/barnes3.jpg',
+    '../assets/img/inside.jpg',
+    '../assets/img/parrish2.jpg',
+    '../assets/img/rebarnes.jpg',
+    '../assets/img/rebarnes1.jpg',
+    '../assets/img/rebarnes3.jpg',
+    '../assets/img/rekean1.jpg',
+    '../assets/img/rekean2.jpg',
+    '../assets/img/rekean3.jpg',
+    '../assets/img/reparish1.jpg'
+  ]
+
+  const openImgModal = (e) => {
+    modalImgSrc = e.detail.imgSrc
+    return modalImgSrc
+  }
 </script>
 
 <style type="text/scss">
-  // img {
-  //   width: 400px;
-  //   height: 400px;
-  // }
-
   .carousel-wrapper {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 200px;
     display: flex;
     justify-content: center;
   }
@@ -36,14 +37,39 @@
     // height: 400px;
     width: 100%;
     overflow-x: auto;
+  }
+  .img-modal-wrapper {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(99, 98, 98, 0.568);
+  }
 
-    // @for $i from 1 through 10 {
-    //   @if $i != 10 {
-    //     img:nth-of-type(#{$i}) {
-    //       margin-right: 1rem;
-    //     }
-    //   }
-    // }
+  .img-modal-container {
+    position: relative;
+    width: 95%;
+    max-width: 615px;
+    max-height: 580px;
+    img {
+      width: 100%;
+      height: 75%;
+      display: block;
+      margin: 0 auto;
+    }
+    button {
+      font-size: 0.8rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-radius: 2rem;
+      background: rgba(49, 49, 49, 0.7);
+    }
   }
 </style>
 
@@ -52,10 +78,23 @@
   <p>Check out our gallery below!</p>
   <div class="carousel-wrapper">
     <div class="carousel-container">
-      <!-- {#each images as image, i}<img src={image} alt="Testimonial-{i}" />{/each} -->
       {#each images as image, i}
-      <Image isGallery styleOverride="margin-right: 1rem; width: 400px; height: 400px; flex-shrink: 0;" imgSrc="{image}" imgSrcTiny={"./assets/img-blurry/1925blurred.jpg"} imgAlt="Gallery-{i}"/>
+        <Image
+          on:openImg={openImgModal}
+          isGallery
+          styleOverride="margin-right: 1rem; width: 200px; height: 200px; flex-shrink: 0;"
+          imgSrc={image}
+          imgSrcTiny={'./assets/img-blurry/1925blurred.jpg'}
+          imgAlt="Gallery-{i}" />
       {/each}
     </div>
   </div>
+  {#if modalImgSrc}
+    <div class="img-modal-wrapper">
+      <div class="img-modal-container">
+        <img src={modalImgSrc} alt="Whoops" />
+        <button on:click={() => (modalImgSrc = null)}>Close</button>
+      </div>
+    </div>
+  {/if}
 </div>
