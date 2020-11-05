@@ -166,11 +166,12 @@
 
   // For the selection toggle
   .rest {
-    transition: all 0.1s linear;
+    transition: all 0.2s linear;
+    transform-origin: center;
   }
 
   .active {
-    transition: transform 0.1s linear;
+    transition: transform 0.2s linear;
     transform-origin: center;
     transform: rotate(90deg);
   }
