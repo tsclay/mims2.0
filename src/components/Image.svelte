@@ -48,7 +48,7 @@
     width: 100%;
     align-self: stretch;
     height: 100%;
-    min-height: 290px;
+    min-height: 200px;
     border-radius: 4px;
   }
 </style>
