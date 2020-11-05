@@ -1,5 +1,5 @@
 <script>
-  const currentYear = new Date().getUTCFullYear();
+  const currentYear = new Date().getUTCFullYear()
 </script>
 
 <style type="text/scss">
@@ -51,7 +51,11 @@
     </div>
     <div class="company-contact">
       <p>Mims Family Painting</p>
-      <p>631-281-5815 | mims@mimspainting.com</p>
+      <p>
+        <a href="tel:+16312815815">631-281-5815</a>
+        |
+        <a href="mailto:mims@mimspainting.com">mims@mimspainting.com</a>
+      </p>
     </div>
   </div>
   <p>
