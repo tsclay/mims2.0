@@ -70,6 +70,8 @@
   .img-modal-container {
     position: relative;
     width: 95%;
+    max-width: 615px;
+    max-height: 580px;
     img {
       width: 100%;
       height: 75%;
