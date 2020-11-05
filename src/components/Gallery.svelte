@@ -15,7 +15,6 @@
   ];
 
   const openImgModal = (e) => {
-    console.log(e.detail);
     modalImgSrc = e.detail.imgSrc;
     return modalImgSrc;
   };
