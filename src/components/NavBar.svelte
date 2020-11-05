@@ -1,20 +1,20 @@
 <script>
-  export let toggleModal;
-  export let width;
-  export let toggleNavButtons;
-  export let navIsSticky;
-  export let stickyNav;
+  export let toggleModal
+  export let width
+  export let toggleNavButtons
+  export let navIsSticky
+  export let stickyNav
 
   const scrollToTarget = (e) => {
     const target = document.querySelector(
       `#${e.target.innerText.toLowerCase()}`
-    ).offsetTop;
+    ).offsetTop
     window.scrollTo({
       left: 0,
       top: target - 100,
-      behavior: "smooth",
-    });
-  };
+      behavior: 'smooth'
+    })
+  }
 </script>
 
 <style type="text/scss">
@@ -24,7 +24,7 @@
     position: -webkit-sticky;
     z-index: 10;
     top: 0;
-    height: 5rem;
+    height: 3.75rem;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
