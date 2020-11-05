@@ -1,23 +1,23 @@
 <script>
-  import Image from "./Image.svelte";
-  let modalImgSrc;
+  import Image from './Image.svelte'
+  let modalImgSrc
   let images = [
-    "../assets/img/barnes3.jpg",
-    "../assets/img/inside.jpg",
-    "../assets/img/parrish2.jpg",
-    "../assets/img/rebarnes.jpg",
-    "../assets/img/rebarnes1.jpg",
-    "../assets/img/rebarnes3.jpg",
-    "../assets/img/rekean1.jpg",
-    "../assets/img/rekean2.jpg",
-    "../assets/img/rekean3.jpg",
-    "../assets/img/reparish1.jpg",
-  ];
+    '../assets/img/barnes3.jpg',
+    '../assets/img/inside.jpg',
+    '../assets/img/parrish2.jpg',
+    '../assets/img/rebarnes.jpg',
+    '../assets/img/rebarnes1.jpg',
+    '../assets/img/rebarnes3.jpg',
+    '../assets/img/rekean1.jpg',
+    '../assets/img/rekean2.jpg',
+    '../assets/img/rekean3.jpg',
+    '../assets/img/reparish1.jpg'
+  ]
 
   const openImgModal = (e) => {
-    modalImgSrc = e.detail.imgSrc;
-    return modalImgSrc;
-  };
+    modalImgSrc = e.detail.imgSrc
+    return modalImgSrc
+  }
 </script>
 
 <style type="text/scss">
@@ -61,6 +61,7 @@
       margin: 0 auto;
     }
     button {
+      font-size: 0.8rem;
       position: absolute;
       top: 0;
       right: 0;
