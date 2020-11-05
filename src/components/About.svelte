@@ -425,7 +425,8 @@
     gridArea={width > 600 ? '1/1/1/1' : '2/1/2/1'}
     imgSrc="./assets/img/tinified/inside.jpg"
     imgSrcTiny={'./assets/img-blurry/1925blurred.jpg'}
-    imgAlt="Mims Painting, 1925" />
+    imgAlt="Mims Painting, 1925"
+    hideBtn={true} />
   <div class="about-text1">
     <h1>Six generations of excellence</h1>
     <p>
@@ -456,13 +457,15 @@
     gridArea={width > 600 ? '2/3/2/3' : '4/1/4/1'}
     imgSrc="./assets/img/tinified/rebarnes3.jpg"
     imgSrcTiny={'./assets/img-blurry/rebarnes3blurred.jpg'}
-    imgAlt="Paint work on non-conventional canvases" />
+    imgAlt="Paint work on non-conventional canvases"
+    hideBtn={true} />
 
   <Image
     gridArea={width > 600 ? '3/1/3/1' : '6/1/6/1'}
     imgSrc="./assets/img/tinified/parrish2.jpg"
     imgSrcTiny={'./assets/img-blurry/parrish2blurred.jpg'}
-    imgAlt="Blah" />
+    imgAlt="Blah"
+    hideBtn={true} />
 
   <div class="about-text3">
     <h1>Serving Residential & Commercial</h1>
@@ -497,5 +500,6 @@
     gridArea={width > 600 ? '4/3/4/3' : '8/1/8/1'}
     imgSrc="./assets/img/tinified/rekean3.jpg"
     imgSrcTiny={'./assets/img-blurry/rekean3blurred.jpg'}
-    imgAlt="Blah" />
+    imgAlt="Blah"
+    hideBtn={true} />
 </div>

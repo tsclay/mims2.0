@@ -7,6 +7,7 @@
   export let imgSrcTiny = imgSrc;
   export let imgAlt = "Image";
   export let gridArea, styleOverride, isGallery;
+  export let hideBtn;
 
   let isAbsolute = false;
   let isStatic = false;
@@ -44,6 +45,25 @@
     height: auto;
   }
 
+  .img-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .maximize {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 2rem;
+    background: rgba(49, 49, 49, 0.7);
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   img {
     width: 100%;
     align-self: stretch;
@@ -55,14 +75,30 @@
 
 <VisibilityGuard let:hasBeenVisible {gridArea} {styleOverride}>
   {#if hasBeenVisible}
-    <img
-      in:fade
-      class:isAbsolute
-      class:isStatic
-      class:isGallery
-      src={imgSrc}
-      alt={imgAlt}
-      on:click={forwardImgClick} />
+    <div class="img-wrapper" on:click={forwardImgClick}>
+      {#if !hideBtn}
+        <button class="maximize">
+          <svg
+            width="100%"
+            height="100%"
+            version="1.1"
+            viewBox="0 0 64.029 59.267"
+            xmlns="http://www.w3.org/2000/svg">
+            <g fill="var(--white)">
+              <path d="m63.775 0.037775-3.2233 49.618-46.394-46.394z" />
+              <path d="m3.4778 9.6112 46.394 46.395-49.618 3.2232z" />
+            </g>
+          </svg>
+        </button>
+      {/if}
+      <img
+        in:fade
+        class:isAbsolute
+        class:isStatic
+        class:isGallery
+        src={imgSrc}
+        alt={imgAlt} />
+    </div>
   {:else}
     <img
       class:isGallery
