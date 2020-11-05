@@ -70,17 +70,19 @@
 
   .img-modal-container {
     position: relative;
-    width: 100%;
+    width: 95%;
     img {
       width: 100%;
       height: 75%;
+      display: block;
+      margin: 0 auto;
     }
     button {
       position: absolute;
-      bottom: 0;
-      right: 4px;
+      top: 0;
+      right: 0;
       border-radius: 2rem;
-      background: rgba(49, 49, 49, 0.5);
+      background: rgba(49, 49, 49, 0.7);
     }
   }
 </style>
@@ -105,8 +107,8 @@
     {#if modalImgSrc}
       <div class="img-modal-wrapper">
         <div class="img-modal-container">
-          <button on:click={() => (modalImgSrc = null)}>X</button>
           <img src={modalImgSrc} alt="Whoops" />
+          <button on:click={() => (modalImgSrc = null)}>Close</button>
         </div>
       </div>
     {/if}
